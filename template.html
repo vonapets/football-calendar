@@ -1,0 +1,1202 @@
+<title>Season Wallchart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Spline+Sans+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#eef0ec; --card:#f9faf7; --sunk:#e3e6e0;
+  --ink:#151815; --ink-2:#5b625a; --ink-3:#878f85;
+  --rule:#d2d7cd; --rule-2:#c0c6ba;
+  --signal:#c04310; --signal-bg:#f6e3d8;
+  --break:#c9862a; --break-bg:rgba(201,134,42,.13);
+  --focus:#2b3fb8;
+  --hot:#151815; --hot-bg:rgba(21,24,21,.055); --hot-ring:rgba(21,24,21,.26);
+  --shadow:0 1px 0 rgba(21,24,21,.05), 0 2px 8px rgba(21,24,21,.05);
+
+  --f-display:"Bricolage Grotesque","Archivo",system-ui,sans-serif;
+  --f-body:"Archivo",system-ui,-apple-system,sans-serif;
+  --f-mono:"Spline Sans Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --sp:.5rem; --r:3px;
+  --shell:1560px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#111418; --card:#191d22; --sunk:#0b0e11;
+    --ink:#e7eae5; --ink-2:#98a199; --ink-3:#6d766f;
+    --rule:#2a3037; --rule-2:#39414a;
+    --signal:#ff8a4c; --signal-bg:#3a2015;
+    --break:#e0a63f; --break-bg:rgba(224,166,63,.12);
+    --focus:#7d95ff;
+    --hot:#f2f5ef; --hot-bg:rgba(231,234,229,.08); --hot-ring:rgba(231,234,229,.32);
+    --shadow:0 1px 0 rgba(0,0,0,.4), 0 2px 10px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111418; --card:#191d22; --sunk:#0b0e11;
+  --ink:#e7eae5; --ink-2:#98a199; --ink-3:#6d766f;
+  --rule:#2a3037; --rule-2:#39414a;
+  --signal:#ff8a4c; --signal-bg:#3a2015;
+  --break:#e0a63f; --break-bg:rgba(224,166,63,.12);
+  --focus:#7d95ff;
+    --hot:#f2f5ef; --hot-bg:rgba(231,234,229,.08); --hot-ring:rgba(231,234,229,.32);
+  --shadow:0 1px 0 rgba(0,0,0,.4), 0 2px 10px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--f-body); font-size:14px; line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* ---------- masthead ---------- */
+.shell{max-width:var(--shell);margin:0 auto;padding:0 clamp(.75rem,2vw,1.5rem)}
+header.top{
+  position:sticky;top:0;z-index:40;background:var(--paper);
+  border-bottom:1px solid var(--rule-2);
+}
+.masthead{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;padding:.9rem 0 .55rem}
+.wordmark{
+  font-family:var(--f-display);font-weight:800;font-size:clamp(1.15rem,2.4vw,1.5rem);
+  letter-spacing:-.022em;line-height:1;margin:0;text-wrap:balance;
+}
+.season-tag{
+  font-family:var(--f-mono);font-size:.7rem;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule-2);
+  padding:.16rem .42rem;border-radius:var(--r);
+}
+.stamp{margin-left:auto;font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);text-align:right;line-height:1.5}
+.stamp b{color:var(--ink-2);font-weight:500}
+
+/* ---------- season ribbon ---------- */
+.ribbon-wrap{padding:.15rem 0 .7rem}
+.ribbon-head{
+  display:flex;align-items:center;gap:.6rem;margin-bottom:.3rem;
+  font-family:var(--f-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+}
+.ribbon-head .key{display:flex;align-items:center;gap:.3rem;margin-left:auto}
+.ribbon-head .swatch{width:16px;height:7px;background:var(--break);border-radius:2px}
+.ribbon{position:relative;background:var(--sunk);border:1px solid var(--rule);border-radius:var(--r);cursor:pointer;overflow:hidden}
+.rb-top{position:relative;height:40px}
+.rb-breaks{position:relative;height:40px;border-top:1px solid var(--rule-2);background:var(--card)}
+.ribbon .mon{position:absolute;top:0;bottom:0;border-right:1px solid var(--rule);display:flex;align-items:flex-start;justify-content:center;padding-top:4px;pointer-events:none}
+.ribbon .mon span{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.ribbon .mon:last-child{border-right:none}
+.ribbon .load{position:absolute;bottom:0;width:3px;background:var(--ink-3);opacity:.5;border-radius:1px 1px 0 0}
+.rb-breaks .bk{position:absolute;top:6px;height:7px;background:var(--break);border-radius:2px;min-width:3px}
+.rb-breaks .bk.projected{background:repeating-linear-gradient(90deg,var(--break) 0 3px,transparent 3px 7px)}
+.rb-breaks .bk.live{box-shadow:0 0 0 2px var(--signal)}
+.rb-breaks .bk-lab{position:absolute;white-space:nowrap;font-family:var(--f-mono);font-size:.56rem;
+  color:var(--ink-3);transform:translateX(-50%);pointer-events:none;line-height:1.15}
+.rb-breaks .bk-lab b{color:var(--break);font-weight:600;letter-spacing:.05em;margin-right:.26em}
+.rb-breaks .stem{position:absolute;width:1px;background:var(--break);opacity:.4;pointer-events:none}
+.ribbon .now{position:absolute;top:0;bottom:0;width:2px;background:var(--signal);z-index:4}
+.ribbon .now::after{content:"";position:absolute;top:0;left:-3px;width:8px;height:8px;background:var(--signal);border-radius:50%}
+.ribbon .cursor{position:absolute;top:0;bottom:0;background:rgba(120,130,120,.16);z-index:3;pointer-events:none;border-left:1px solid var(--ink-3);border-right:1px solid var(--ink-3)}
+
+/* ---------- controls ---------- */
+.controls{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;padding-bottom:.7rem}
+.segbar{display:inline-flex;border:1px solid var(--rule-2);border-radius:var(--r);overflow:hidden}
+.segbar button{
+  padding:.32rem .68rem;font-size:.76rem;font-weight:600;color:var(--ink-2);
+  border-right:1px solid var(--rule-2);letter-spacing:.01em;
+}
+.segbar button:last-child{border-right:none}
+.segbar button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.segbar button:hover:not([aria-pressed="true"]){background:var(--sunk);color:var(--ink)}
+
+.nav{display:inline-flex;align-items:center;gap:.35rem}
+.nav .arrow{
+  width:26px;height:26px;display:grid;place-items:center;border:1px solid var(--rule-2);
+  border-radius:var(--r);color:var(--ink-2);font-size:.85rem;
+}
+.nav .arrow:hover{background:var(--sunk);color:var(--ink)}
+.nav .today{padding:.28rem .6rem;border:1px solid var(--rule-2);border-radius:var(--r);font-size:.74rem;font-weight:600;color:var(--ink-2)}
+.nav .today:hover{background:var(--sunk);color:var(--ink)}
+.period{
+  font-family:var(--f-display);font-weight:600;font-size:1rem;letter-spacing:-.01em;
+  min-width:12ch;
+}
+.spacer{margin-left:auto}
+.searchbox{
+  display:flex;align-items:center;gap:.35rem;border:1px solid var(--rule-2);
+  border-radius:var(--r);padding:.24rem .5rem;background:var(--card);
+}
+.searchbox input{
+  border:none;background:none;font:inherit;font-size:.78rem;color:var(--ink);width:13ch;outline:none;
+}
+.searchbox input::placeholder{color:var(--ink-3)}
+
+/* ---------- competition rail ---------- */
+.rail{display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;padding:0 0 .75rem}
+.railgroup{display:flex;align-items:center;gap:.4rem}
+.railgroup > .glabel{
+  font-family:var(--f-mono);font-size:.58rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink-3);margin-right:.1rem;
+}
+.chip{
+  display:inline-flex;align-items:center;gap:.38rem;padding:.22rem .5rem .22rem .38rem;
+  border:1px solid var(--rule-2);border-radius:var(--r);font-size:.74rem;font-weight:600;
+  color:var(--ink-3);background:var(--card);white-space:nowrap;
+}
+.chip .dot{width:9px;height:9px;border-radius:2px;background:var(--c);opacity:.3;flex:none}
+.chip .n{font-family:var(--f-mono);font-size:.63rem;font-weight:500;color:var(--ink-3);opacity:.75}
+.chip[aria-pressed="true"]{color:var(--ink);border-color:var(--c)}
+.chip[aria-pressed="true"] .dot{opacity:1}
+.chip:hover{background:var(--sunk)}
+.chip.cup .dot{border-radius:50%}
+.chip.euro .dot{clip-path:polygon(50% 0,100% 100%,0 100%);border-radius:0}
+.railactions{display:flex;gap:.3rem;margin-left:auto}
+.railactions button{font-size:.7rem;color:var(--ink-3);text-decoration:underline;text-underline-offset:2px}
+.railactions button:hover{color:var(--ink)}
+.railactions .qualtog{text-decoration:none;border:1px solid var(--rule-2);border-radius:var(--r);padding:.2rem .45rem;font-weight:600;font-size:.7rem}
+.railactions .qualtog[aria-pressed="true"]{color:var(--ink);border-color:var(--ink-3)}
+
+/* ---------- generic fixture atoms ---------- */
+.fx{
+  display:flex;align-items:baseline;gap:.4rem;padding:.16rem .3rem .16rem .42rem;
+  border-radius:2px;position:relative;width:100%;text-align:left;
+  border-left:3px solid var(--c);background:var(--card);min-width:0;
+}
+.fx:hover{background:var(--sunk)}
+.fx .t{font-family:var(--f-mono);font-size:.66rem;font-weight:500;color:var(--ink-2);flex:none;letter-spacing:-.02em}
+.fx .m{font-size:.73rem;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+.fx .m .vs{color:var(--ink-3);font-size:.66rem;padding:0 .12rem}
+.fx.done .m{color:var(--ink-2)}
+.fx .sc{font-family:var(--f-mono);font-size:.66rem;font-weight:600;flex:none}
+.fx .flag{font-family:var(--f-mono);font-size:.6rem;font-weight:600;color:var(--signal);flex:none;letter-spacing:.03em}
+.fx.moved{background:var(--signal-bg)}
+.fx.off .m{text-decoration:line-through;text-decoration-thickness:1px;color:var(--ink-3)}
+
+/* ---------- top-club emphasis ----------
+   Importance is carried by weight and contrast rather than another hue: the nine
+   competition colours plus orange-for-moved and ochre-for-break already own the
+   spectrum, and a twelfth colour would read as noise instead of hierarchy.
+   One big club  -> that club's name in full ink at 700.
+   Two big clubs -> the whole fixture is ringed and lifted off the card. */
+.tt{font-weight:700;color:var(--ink)}
+.fx.big:not(.moved){background:var(--hot-bg);box-shadow:inset 0 0 0 1px var(--hot-ring)}
+.fx.big:hover{background:var(--sunk)}
+.fx.big.done{opacity:.72}
+.wfx.big:not(.moved){background:var(--hot-bg);box-shadow:inset 0 0 0 1px var(--hot-ring)}
+.lrow.big:not(.moved){background:var(--hot-bg)}
+.tag{
+  font-family:var(--f-mono);font-size:.55rem;font-weight:600;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--hot);
+}
+/* The top-club filter is on by default, so it has to announce itself: a real
+   checkbox-style control at the head of the filter rail, not a quiet link in the
+   corner. Someone opening a shared link must be able to see at a glance that
+   fixtures are being held back, and how to let them through. */
+.bigtog{
+  display:inline-flex;align-items:center;gap:.44rem;white-space:nowrap;
+  padding:.32rem .66rem .32rem .52rem;border:1px solid var(--ink-3);border-radius:var(--r);
+  font-size:.79rem;font-weight:700;letter-spacing:-.005em;color:var(--ink-2);background:var(--card);
+}
+.bigtog .bt-mark{
+  width:11px;height:11px;flex:none;position:relative;border-radius:2px;
+  border:1.5px solid var(--ink-3);
+}
+.bigtog .n{font-family:var(--f-mono);font-size:.66rem;font-weight:600;opacity:.7}
+.bigtog:hover{border-color:var(--ink);color:var(--ink)}
+.bigtog:hover .bt-mark{border-color:var(--ink)}
+.bigtog[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.bigtog[aria-pressed="true"] .bt-mark{background:var(--paper);border-color:var(--paper)}
+.bigtog[aria-pressed="true"] .bt-mark::after{
+  content:"";position:absolute;left:3px;top:.5px;width:2.5px;height:6px;
+  border:solid var(--ink);border-width:0 1.7px 1.7px 0;transform:rotate(42deg);
+}
+.bigtog[aria-pressed="true"] .n{opacity:.75}
+
+/* ---------- month grid ---------- */
+.grid-head{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:1px;margin-bottom:1px}
+.grid-head div{
+  font-family:var(--f-mono);font-size:.6rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink-3);padding:.3rem .45rem;
+}
+.month{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+.day{background:var(--card);min-height:118px;min-width:0;padding:.3rem .3rem .35rem;display:flex;flex-direction:column;gap:2px}
+.day.out{background:var(--sunk)}
+.day.out .dnum{color:var(--ink-3);opacity:.5}
+.day.brk{background-image:repeating-linear-gradient(-45deg,transparent 0 6px,var(--break-bg) 6px 12px)}
+.day.today{box-shadow:inset 0 0 0 2px var(--signal)}
+.dhead{display:flex;align-items:center;gap:.3rem;margin-bottom:1px}
+.dnum{font-family:var(--f-mono);font-size:.72rem;font-weight:600;color:var(--ink-2)}
+.dmon{font-family:var(--f-body);font-size:.63rem;font-weight:500;color:var(--ink-3);margin-left:.24rem;letter-spacing:.005em}
+.day.today .dmon{color:var(--signal)}
+.day.today .dnum{color:var(--signal)}
+.dbrk{font-family:var(--f-mono);font-size:.55rem;color:var(--break);font-weight:600;letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.more{
+  display:block;width:100%;margin-top:3px;padding:.2rem .3rem;
+  font-family:var(--f-mono);font-size:.61rem;font-weight:600;letter-spacing:.04em;
+  color:var(--ink-2);background:var(--paper);border:1px solid var(--rule-2);
+  border-radius:2px;text-align:center;
+}
+.more:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.day.open .more{color:var(--signal);border-color:var(--signal);background:var(--card)}
+.day.open .more:hover{background:var(--signal);color:var(--paper);border-color:var(--signal)}
+/* a second way out, pinned to the top of the cell so it is visible without
+   scanning past every fixture in a long day */
+.dclose{
+  margin-left:auto;font-family:var(--f-mono);font-size:.57rem;font-weight:600;letter-spacing:.04em;
+  color:var(--signal);border:1px solid var(--signal);border-radius:2px;padding:0 .28rem;line-height:1.4;
+}
+.dclose:hover{background:var(--signal);color:var(--paper)}
+.day.open{background:var(--sunk)}
+.day.open .more{color:var(--signal)}
+button.dnum{background:none;border:none;padding:0;cursor:pointer;font-family:var(--f-mono);font-size:.72rem;font-weight:600;color:var(--ink-2)}
+button.dnum:hover{color:var(--ink)}
+button.dnum:hover .dmon{color:var(--ink-2)}
+
+/* ---------- week view ---------- */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+.wcol{background:var(--card);min-height:340px;min-width:0;padding:.4rem .35rem;display:flex;flex-direction:column;gap:3px}
+.wcol.brk{background-image:repeating-linear-gradient(-45deg,transparent 0 7px,var(--break-bg) 7px 14px)}
+.wcol.today{box-shadow:inset 0 0 0 2px var(--signal)}
+.whead{border-bottom:1px solid var(--rule);padding-bottom:.25rem;margin-bottom:.15rem}
+.whead .wd{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+.whead .wn{font-family:var(--f-display);font-size:1.05rem;font-weight:600;line-height:1.1}
+.wcol.today .whead .wn{color:var(--signal)}
+.wfx{
+  border-left:3px solid var(--c);background:var(--paper);padding:.3rem .35rem;border-radius:2px;
+  display:flex;flex-direction:column;gap:1px;text-align:left;width:100%;
+}
+.wfx:hover{background:var(--sunk)}
+.wfx .top{display:flex;align-items:baseline;gap:.35rem}
+.wfx .t{font-family:var(--f-mono);font-size:.68rem;font-weight:600;color:var(--ink)}
+.wfx .cmp{font-family:var(--f-mono);font-size:.56rem;font-weight:600;color:var(--c);letter-spacing:.06em;margin-left:auto}
+.wfx .team{font-size:.78rem;line-height:1.25;font-weight:500}
+.wfx .team{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wfx .meta{font-family:var(--f-mono);font-size:.58rem;color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wfx.moved{background:var(--signal-bg)}
+.wfx .flag{font-family:var(--f-mono);font-size:.58rem;color:var(--signal);font-weight:600}
+
+/* ---------- list view ---------- */
+.list{border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;background:var(--card)}
+.lgroup{border-bottom:1px solid var(--rule)}
+.lgroup:last-child{border-bottom:none}
+.lhead{
+  display:flex;align-items:baseline;gap:.5rem;padding:.4rem .7rem;background:var(--sunk);
+  border-bottom:1px solid var(--rule);position:sticky;top:0;
+}
+.lhead .lt{font-family:var(--f-display);font-weight:600;font-size:.86rem}
+.lhead .ls{font-family:var(--f-mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em}
+.lhead .lb{font-family:var(--f-mono);font-size:.6rem;color:var(--break);font-weight:600;margin-left:auto}
+.lrow{
+  display:grid;grid-template-columns:5.5rem 3.4rem 1fr auto;gap:.6rem;align-items:baseline;
+  padding:.3rem .7rem;border-bottom:1px solid var(--rule);border-left:3px solid var(--c);
+  text-align:left;width:100%;
+}
+.lrow:last-child{border-bottom:none}
+.list[data-group="comp"] .lrow{grid-template-columns:9.5rem 3.4rem 1fr auto}
+.lrow:hover{background:var(--sunk)}
+.lrow .when{font-family:var(--f-mono);font-size:.68rem;color:var(--ink-2)}
+.lrow .cmp{font-family:var(--f-mono);font-size:.6rem;font-weight:600;color:var(--c);letter-spacing:.05em}
+.lrow .match{font-size:.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lrow .match .vs{color:var(--ink-3);font-size:.7rem;padding:0 .15rem}
+.lrow .rt{font-family:var(--f-mono);font-size:.62rem;color:var(--ink-3);text-align:right}
+.lrow.moved{background:var(--signal-bg)}
+.lrow.off .match{text-decoration:line-through;color:var(--ink-3)}
+
+/* ---------- changes panel ---------- */
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;margin:1.1rem 0 0}
+.panel{border:1px solid var(--rule);border-radius:var(--r);background:var(--card);overflow:hidden}
+.ptitle{
+  display:flex;align-items:baseline;gap:.5rem;padding:.45rem .7rem;border-bottom:1px solid var(--rule);
+  background:var(--sunk);
+}
+.ptitle h2{font-family:var(--f-display);font-size:.82rem;font-weight:600;margin:0;letter-spacing:-.005em}
+.ptitle .c{font-family:var(--f-mono);font-size:.62rem;color:var(--ink-3);margin-left:auto}
+.pbody{max-height:300px;overflow-y:auto}
+.crow{padding:.4rem .7rem;border-bottom:1px solid var(--rule);border-left:3px solid var(--c);display:flex;flex-direction:column;gap:1px}
+.crow:last-child{border-bottom:none}
+.crow .cm{font-size:.78rem;font-weight:500}
+.crow .cd{font-family:var(--f-mono);font-size:.63rem;color:var(--ink-2)}
+.crow .cd .old{text-decoration:line-through;color:var(--ink-3)}
+.crow .cd .arw{color:var(--signal);padding:0 .25rem}
+.crow .cw{font-family:var(--f-mono);font-size:.57rem;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+.brow{padding:.4rem .7rem;border-bottom:1px solid var(--rule);border-left:3px solid var(--break)}
+.brow:last-child{border-bottom:none}
+.brow .bl{font-size:.79rem;font-weight:600}
+.brow .bd{font-family:var(--f-mono);font-size:.63rem;color:var(--ink-2)}
+.brow .bn{font-size:.7rem;color:var(--ink-3);line-height:1.35;margin-top:1px}
+.brow.past{opacity:.5}
+.empty{padding:1.1rem .7rem;text-align:center;color:var(--ink-3);font-size:.78rem}
+
+/* ---------- big-match digest ---------- */
+.bigpanel{border:1px solid var(--rule-2);border-radius:var(--r);background:var(--card);overflow:hidden;margin:1rem 0 1.15rem}
+.bigpanel .ptitle{gap:.55rem;flex-wrap:wrap}
+.bigpanel .win{font-family:var(--f-mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.03em;white-space:nowrap}
+.segbar.tiny button{padding:.16rem .45rem;font-size:.65rem}
+/* one border per card rather than grid gaps, so a part-filled last row does not
+   leave a stripe of rule colour hanging under it */
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr))}
+.bcard{
+  display:flex;flex-direction:column;gap:.2rem;text-align:left;width:100%;min-width:0;
+  background:var(--card);padding:.48rem .6rem .55rem;border-left:3px solid var(--c);
+  border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+.bcard:hover{background:var(--sunk)}
+.bhead{display:flex;align-items:flex-end;gap:.4rem}
+.bdate{font-family:var(--f-mono);font-size:.63rem;font-weight:600;color:var(--ink-2);letter-spacing:.03em;text-transform:uppercase}
+.bmeter{display:inline-flex;gap:2px;margin-left:auto;align-items:flex-end;flex:none}
+.bmeter i{width:3px;background:var(--rule-2);border-radius:1px}
+.bmeter i:nth-child(1){height:4px}
+.bmeter i:nth-child(2){height:7px}
+.bmeter i:nth-child(3){height:10px}
+.bmeter i.on{background:var(--hot)}
+.bteams{font-family:var(--f-display);font-size:.92rem;font-weight:600;line-height:1.24;letter-spacing:-.01em;text-wrap:balance}
+.bteams .vs{font-style:normal;font-family:var(--f-body);font-weight:400;color:var(--ink-3);font-size:.72rem;padding:0 .2rem}
+.bteams .sc{font-family:var(--f-mono);font-size:.78rem;font-weight:600;color:var(--ink-2)}
+.bfoot{display:flex;align-items:baseline;gap:.4rem;font-family:var(--f-mono);font-size:.6rem;color:var(--ink-3);min-width:0}
+.bfoot .bcmp{font-weight:600;color:var(--c);letter-spacing:.05em;flex:none}
+.bfoot .btime{color:var(--ink-2);font-weight:500;flex:none}
+.bfoot .bnote{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.bfoot .bnote .is-tag{font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--hot)}
+.bcard.done{opacity:.6}
+.bcard.moved{background:var(--signal-bg)}
+.bcard.off .bteams{text-decoration:line-through;color:var(--ink-3)}
+.bmore{
+  display:block;width:100%;padding:.42rem;background:var(--sunk);border-top:1px solid var(--rule);
+  font-family:var(--f-mono);font-size:.64rem;font-weight:600;letter-spacing:.05em;color:var(--ink-2);
+}
+.bmore:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- detail dialog ---------- */
+dialog{
+  border:1px solid var(--rule-2);border-radius:var(--r);background:var(--card);color:var(--ink);
+  padding:0;max-width:min(430px,92vw);box-shadow:var(--shadow);
+}
+dialog::backdrop{background:rgba(10,12,10,.42)}
+.dlg-top{padding:.75rem .9rem .5rem;border-bottom:1px solid var(--rule);border-left:4px solid var(--c)}
+.dlg-cmp{font-family:var(--f-mono);font-size:.6rem;font-weight:600;color:var(--c);letter-spacing:.07em;text-transform:uppercase}
+.dlg-match{font-family:var(--f-display);font-size:1.1rem;font-weight:600;line-height:1.2;margin:.15rem 0 0;text-wrap:balance}
+.dlg-body{padding:.7rem .9rem .9rem;display:flex;flex-direction:column;gap:.4rem}
+.dl{display:grid;grid-template-columns:5.5rem 1fr;gap:.5rem;font-size:.78rem;align-items:baseline}
+.dl dt{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.dl dd{margin:0}
+.dlg-note{background:var(--signal-bg);border-left:3px solid var(--signal);padding:.4rem .55rem;font-size:.76rem;border-radius:2px}
+.dlg-note b{color:var(--signal)}
+.dlg-close{position:absolute;top:.5rem;right:.6rem;font-size:1rem;color:var(--ink-3);line-height:1}
+.dlg-close:hover{color:var(--ink)}
+
+footer{padding:1.4rem 0 2.2rem;color:var(--ink-3);font-size:.7rem;line-height:1.6}
+footer code{font-family:var(--f-mono);font-size:.95em}
+
+@media (max-width:820px){
+  .day{min-height:78px}
+  .fx .t{display:none}
+  .week{grid-template-columns:1fr}
+  .wcol{min-height:0}
+  .lrow{grid-template-columns:4.6rem 1fr;row-gap:.1rem}
+  .lrow .rt{display:none}
+  .period{min-width:0}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="shell">
+    <div class="masthead">
+      <h1 class="wordmark">Season Wallchart</h1>
+      <span class="season-tag" id="seasonTag">&#8212;</span>
+      <div class="stamp">
+        <div>Synced <b id="syncedAt">&#8212;</b></div>
+        <div id="tzNote">&#8212;</div>
+      </div>
+    </div>
+
+    <div class="ribbon-wrap">
+      <div class="ribbon-head">
+        <span>Season at a glance &#8212; click to jump</span>
+        <span class="key"><span class="swatch"></span> break / no league football</span>
+      </div>
+      <div class="ribbon" id="ribbon" role="slider" tabindex="0"
+           aria-label="Season timeline, click or use arrow keys to move through the season"></div>
+    </div>
+
+    <div class="controls">
+      <div class="segbar" role="group" aria-label="Calendar view">
+        <button data-view="month" aria-pressed="true">Month</button>
+        <button data-view="week"  aria-pressed="false">Week</button>
+        <button data-view="list"  aria-pressed="false">List</button>
+      </div>
+
+      <div class="nav">
+        <button class="arrow" id="prev" aria-label="Previous">&#8592;</button>
+        <button class="today" id="today">Today</button>
+        <button class="arrow" id="next" aria-label="Next">&#8594;</button>
+      </div>
+      <div class="period" id="period">&#8212;</div>
+
+      <div class="segbar" id="groupBar" role="group" aria-label="List grouping" hidden>
+        <button data-group="date" aria-pressed="true">By date</button>
+        <button data-group="comp" aria-pressed="false">By competition</button>
+      </div>
+      <div class="segbar" id="scopeBar" role="group" aria-label="List range" hidden>
+        <button data-scope="month"  aria-pressed="true">This month</button>
+        <button data-scope="season" aria-pressed="false">Whole season</button>
+      </div>
+
+      <div class="spacer"></div>
+      <label class="searchbox">
+        <span aria-hidden="true" style="opacity:.5;font-size:.8rem">&#9906;</span>
+        <input type="search" id="q" placeholder="Find a team" aria-label="Filter by team name">
+      </label>
+    </div>
+
+    <div class="rail" id="rail"></div>
+  </div>
+</header>
+
+<main class="shell" id="main">
+  <section class="bigpanel" id="bigPanel">
+    <div class="ptitle">
+      <h2>Matches that matter</h2>
+      <span class="win tnum" id="bigWindow">&#8212;</span>
+      <div class="segbar tiny" id="bigScope" role="group" aria-label="Big-match window">
+        <button data-big="30" aria-pressed="true">Next 30 days</button>
+        <button data-big="view" aria-pressed="false">Month in view</button>
+      </div>
+      <span class="c" id="bigCount"></span>
+    </div>
+    <div id="bigBody"></div>
+  </section>
+
+  <div id="viewport"></div>
+  <div class="panels">
+    <section class="panel">
+      <div class="ptitle">
+        <h2>Schedule changes</h2>
+        <span class="c" id="changeCount"></span>
+      </div>
+      <div class="pbody" id="changes"></div>
+    </section>
+    <section class="panel">
+      <div class="ptitle">
+        <h2>Breaks &amp; shutdowns</h2>
+        <span class="c" id="breakCount"></span>
+      </div>
+      <div class="pbody" id="breaks"></div>
+    </section>
+  </div>
+
+  <footer>
+    <div id="foot"></div>
+  </footer>
+</main>
+
+<dialog id="dlg">
+  <button class="dlg-close" id="dlgClose" aria-label="Close">&#10005;</button>
+  <div id="dlgInner"></div>
+</dialog>
+
+<script>
+"use strict";
+const DATA = __DATA__;
+
+/* ---------- lookups ---------- */
+const COMP = Object.fromEntries(DATA.competitions.map(c => [c.key, c]));
+const GROUPS = [...new Set(DATA.competitions.map(c => c.group))];
+const DAYS = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+/* Most recent schedule change per fixture id, so a moved match can be flagged in place. */
+const MOVED = {};
+for (const c of DATA.changes || []) {
+  const prev = MOVED[c.id];
+  if (!prev || c.detected >= prev.detected) MOVED[c.id] = c;
+}
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, m =>
+  ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[m]));
+
+/* Local-calendar helpers. Everything buckets by the VIEWER's local date, never UTC. */
+const pad = n => String(n).padStart(2, "0");
+const dkey = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parseKey = k => { const [y,m,d] = k.split("-").map(Number); return new Date(y, m-1, d); };
+const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate()+n); return x; };
+const startOfWeek = d => addDays(d, -((d.getDay()+6) % 7));          // Monday
+const fxDate = f => new Date(f.ts * 1000);
+const TODAY = dkey(new Date());
+
+const timeFmt = new Intl.DateTimeFormat(undefined, { hour:"2-digit", minute:"2-digit", hour12:false });
+const dayFmt  = new Intl.DateTimeFormat(undefined, { weekday:"short", day:"numeric", month:"short" });
+const fullFmt = new Intl.DateTimeFormat(undefined, { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+const TZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+const shortRound = r => String(r || "")
+  .replace(/^Regular Season\s*-\s*/i, "MD ")
+  .replace(/^League Stage\s*-\s*/i, "LP ")
+  .replace(/^Group Stage\s*-\s*/i, "Grp ")
+  .replace(/^Round of /i, "R")
+  .replace(/^Quarter-?finals?/i, "QF")
+  .replace(/^Semi-?finals?/i, "SF")
+  .replace(/^Final$/i, "Final");
+
+/* ---------- break index: every date inside any break, keyed for O(1) lookup ---------- */
+const BREAK_ON = {};
+for (const b of DATA.breaks || []) {
+  let d = parseKey(b.start);
+  const end = parseKey(b.end);
+  let guard = 0;
+  while (d <= end && guard++ < 400) { (BREAK_ON[dkey(d)] ||= []).push(b); d = addDays(d, 1); }
+}
+const breakAt = k => (BREAK_ON[k] || [])[0] || null;
+
+/* ---------- state ---------- */
+const STORE = "wallchart.v2";
+
+/* Only preferences persist. Where you were looking does NOT -- a calendar you check
+   daily should always open on today, never on whatever week you last clicked into.
+   Storage can also be unavailable in a sandboxed frame, so every access is guarded. */
+const saved = (() => {
+  try { return JSON.parse(localStorage.getItem(STORE)) || {}; } catch { return {}; }
+})();
+const S = {
+  view: "month",
+  cursor: null,
+  group: "date",
+  scope: "month",
+  q: "",
+  comps: Array.isArray(saved.comps) ? saved.comps : DATA.competitions.map(c => c.key),
+  qual: saved.qual === true,
+  top: saved.top !== false,                                  // big-club matches only, ON by default
+  bigScope: saved.bigScope === "view" ? "view" : "30",       // window for the bottom panel
+};
+S.comps = new Set(S.comps.filter(k => COMP[k]));
+if (!S.comps.size) S.comps = new Set(DATA.competitions.map(c => c.key));
+
+/* Season bounds drive the ribbon and the "whole season" list scope. */
+const allTs = DATA.fixtures.map(f => f.ts);
+const SEASON_START = allTs.length ? new Date(Math.min(...allTs) * 1000) : new Date();
+const SEASON_END   = allTs.length ? new Date(Math.max(...allTs) * 1000) : new Date();
+const clampToSeason = d =>
+  new Date(Math.min(Math.max(d.getTime(), SEASON_START.getTime()), SEASON_END.getTime()));
+
+S.cursor = clampToSeason(new Date());
+
+const save = () => {
+  try {
+    localStorage.setItem(STORE, JSON.stringify(
+      { comps: [...S.comps], qual: S.qual, top: S.top, bigScope: S.bigScope }));
+  } catch { /* storage blocked in this frame -- preferences just won't stick */ }
+};
+
+/* ---------- filtering ---------- */
+function visible() {
+  const q = S.q.trim().toLowerCase();
+  return DATA.fixtures.filter(f =>
+    S.comps.has(f.comp) &&
+    (S.qual || !f.qual) &&
+    (!S.top || f.hot > 0) &&
+    (!q || f.home.toLowerCase().includes(q) || f.away.toLowerCase().includes(q))
+  );
+}
+
+/* How big a match is, as annotated at build time from the club list in config.json.
+   hot 2 = both clubs listed, 1 = one listed, 0 = neither.
+   The three-bar meter reads: 2 big clubs / 1 elite + 1 big / 2 elite or a derby. */
+const isBig = f => f.hot === 2;
+const heatDots = f => 1 + (f.heat >= 5 ? 1 : 0) + (f.heat >= 6 ? 1 : 0);
+/* A listed club's name is set in full ink; its opponent stays quiet. */
+const tname = (name, tier) => tier ? `<b class="tt">${esc(name)}</b>` : esc(name);
+function bucketByDay(list) {
+  const m = new Map();
+  for (const f of list) {
+    const k = dkey(fxDate(f));
+    if (!m.has(k)) m.set(k, []);
+    m.get(k).push(f);
+  }
+  for (const arr of m.values()) arr.sort((a,b) => a.ts - b.ts || a.comp.localeCompare(b.comp));
+  return m;
+}
+</script>
+
+<script>
+"use strict";
+
+/* ============================ season ribbon ============================ */
+const ribbon = document.getElementById("ribbon");
+
+/* The ribbon spans the fixtures AND every break, so a break falling after the
+   last match (the June international window) is still visible rather than clipped. */
+const breakDates = (DATA.breaks || []).flatMap(b => [parseKey(b.start), addDays(parseKey(b.end), 1)]);
+const RIB_START = new Date(Math.min(SEASON_START, ...breakDates.map(Number)));
+const RIB_END   = new Date(Math.max(SEASON_END,   ...breakDates.map(Number)));
+const SPAN = Math.max(RIB_END - RIB_START, 1);
+const pct = d => ((d - RIB_START) / SPAN) * 100;
+
+const MON3 = d => MONTHS[d.getMonth()].slice(0, 3);
+function rangeLabel(b) {
+  const s = parseKey(b.start), e = parseKey(b.end);
+  return s.getMonth() === e.getMonth()
+    ? `${s.getDate()}\u2013${e.getDate()} ${MON3(s)}`
+    : `${s.getDate()} ${MON3(s)}\u2013${e.getDate()} ${MON3(e)}`;
+}
+
+function renderRibbon() {
+  const width = ribbon.clientWidth || 1200;
+  const toPct = px => (px / width) * 100;
+
+  /* ---- lane 1: months + weekly fixture density ---- */
+  const top = [];
+  const m0 = new Date(RIB_START.getFullYear(), RIB_START.getMonth(), 1);
+  const months = [];
+  for (let d = new Date(m0); d <= RIB_END; d.setMonth(d.getMonth() + 1)) months.push(new Date(d));
+  months.forEach((d, i) => {
+    const l = Math.max(pct(d), 0);
+    const r = Math.min(pct(months[i + 1] || RIB_END), 100);
+    if (r - l > 0) top.push(`<div class="mon" style="left:${l}%;width:${r - l}%"><span>${MON3(d)}</span></div>`);
+  });
+
+  const counts = new Map();
+  for (const f of visible()) {
+    const wk = Math.floor((fxDate(f) - RIB_START) / 6048e5);
+    counts.set(wk, (counts.get(wk) || 0) + 1);
+  }
+  const peak = Math.max(1, ...counts.values());
+  const weeks = Math.max(1, Math.ceil(SPAN / 6048e5));
+  for (const [wk, n] of counts) {
+    top.push(`<div class="load" style="left:${(wk / weeks) * 100}%;height:${Math.round((n / peak) * 20) + 2}px"></div>`);
+  }
+
+  /* ---- lane 2: one labelled bar per break, staggered so labels never collide ---- */
+  const bars = [];
+  const placed = [];                       // right edge, in %, of each label already put on a row
+  const ordered = [...(DATA.breaks || [])].sort((a, b) => a.start.localeCompare(b.start));
+
+  for (const b of ordered) {
+    const l = pct(parseKey(b.start));
+    const r = pct(addDays(parseKey(b.end), 1));
+    if (r < 0 || l > 100) continue;
+    const L = Math.max(l, 0), W = Math.max(Math.min(r, 100) - L, 0.25);
+    const live = b.start <= TODAY && TODAY <= b.end;
+    bars.push(`<div class="bk ${b.source === "projected" ? "projected" : ""} ${live ? "live" : ""}"
+        style="left:${L}%;width:${W}%" title="${esc(b.label)} \u00b7 ${esc(rangeLabel(b))}"></div>`);
+
+    const text = `${b.short || b.label} ${rangeLabel(b)}`;
+    const halfW = toPct(text.length * 5.15) / 2;     // 0.56rem mono is ~5.15px per char
+    let centre = L + W / 2;
+    centre = Math.min(Math.max(centre, halfW + 0.2), 100 - halfW - 0.2);
+
+    let row = 0;
+    while (row < 2 && placed[row] !== undefined && centre - halfW < placed[row]) row++;
+    if (row > 1) row = 1;
+    placed[row] = centre + halfW + toPct(8);
+
+    const top_px = row === 0 ? 16 : 27;
+    bars.push(`<div class="bk-lab" style="left:${centre}%;top:${top_px}px">
+        <b>${esc(b.short || b.label)}</b>${esc(rangeLabel(b))}</div>`);
+    if (row === 1) {
+      bars.push(`<div class="stem" style="left:${L + W / 2}%;top:13px;height:13px"></div>`);
+    }
+  }
+
+  /* ---- markers that cross both lanes ---- */
+  const marks = [];
+  const [ws, we] = viewWindow();
+  const cl = Math.max(pct(ws), 0), cr = Math.min(pct(addDays(we, 1)), 100);
+  if (cr > cl) marks.push(`<div class="cursor" style="left:${cl}%;width:${Math.max(cr - cl, .35)}%"></div>`);
+  const now = new Date();
+  if (now >= RIB_START && now <= RIB_END) marks.push(`<div class="now" style="left:${pct(now)}%"></div>`);
+
+  ribbon.innerHTML =
+    `<div class="rb-top">${top.join("")}</div>` +
+    `<div class="rb-breaks">${bars.join("")}</div>` +
+    marks.join("");
+}
+
+function ribbonJump(clientX) {
+  const r = ribbon.getBoundingClientRect();
+  const frac = Math.min(Math.max((clientX - r.left) / r.width, 0), 1);
+  S.cursor = new Date(SEASON_START.getTime() + frac * SPAN);
+  render();
+}
+ribbon.addEventListener("click", e => ribbonJump(e.clientX));
+ribbon.addEventListener("keydown", e => {
+  const step = { ArrowLeft:-7, ArrowRight:7, ArrowDown:-28, ArrowUp:28 }[e.key];
+  if (step === undefined) return;
+  e.preventDefault();
+  S.cursor = clampToSeason(addDays(S.cursor, step));
+  render();
+});
+
+/* ============================ competition rail ============================ */
+const rail = document.getElementById("rail");
+
+function renderRail() {
+  const q = S.q.trim().toLowerCase();
+  const tally = {};
+  let topN = 0;
+  for (const f of DATA.fixtures) {
+    if (!S.qual && f.qual) continue;
+    if (q && !f.home.toLowerCase().includes(q) && !f.away.toLowerCase().includes(q)) continue;
+    if (f.hot > 0) topN++;
+    if (S.top && !f.hot) continue;
+    tally[f.comp] = (tally[f.comp] || 0) + 1;
+  }
+
+  const html = GROUPS.map(g => {
+    const chips = DATA.competitions.filter(c => c.group === g).map(c => `
+      <button class="chip ${c.tier}" data-comp="${c.key}" style="--c:${c.color}"
+              aria-pressed="${S.comps.has(c.key)}" title="${esc(c.name)}">
+        <span class="dot"></span>${esc(c.short)}<span class="n">${tally[c.key] || 0}</span>
+      </button>`).join("");
+    return `<div class="railgroup"><span class="glabel">${esc(g)}</span>${chips}</div>`;
+  }).join("");
+
+  const qn = DATA.fixtures.filter(f => f.qual).length;
+  const topBtn = `<button class="bigtog" data-top="1" aria-pressed="${S.top}"
+      title="${S.top ? "Currently hiding every fixture without a top club in it. Click to show all "
+                     + DATA.fixtures.length + "."
+                     : "Show only fixtures involving one of the " + (DATA.top_clubs || []).length
+                     + " clubs on the top-club list."}">
+      <span class="bt-mark" aria-hidden="true"></span>Top clubs only<span class="n">${topN}</span></button>`;
+
+  rail.innerHTML = topBtn + html + `<div class="railactions">
+      ${qn ? `<button class="qualtog" data-qual="1" aria-pressed="${S.qual}"
+          title="Early-round European qualifiers, mostly between clubs from outside the big leagues">
+          ${S.qual ? "Hide" : "Show"} European qualifying <span class="n">${qn}</span></button>` : ""}
+      <button data-all="1">All</button><button data-all="0">None</button>
+    </div>`;
+}
+
+rail.addEventListener("click", e => {
+  const chip = e.target.closest("[data-comp]");
+  if (chip) {
+    const k = chip.dataset.comp;
+    S.comps.has(k) ? S.comps.delete(k) : S.comps.add(k);
+    if (!S.comps.size) S.comps.add(k);          // never leave the calendar empty
+    return render();
+  }
+  if (e.target.closest("[data-top]"))  { S.top  = !S.top;  return render(); }
+  if (e.target.closest("[data-qual]")) { S.qual = !S.qual; return render(); }
+  const all = e.target.closest("[data-all]");
+  if (all) {
+    S.comps = all.dataset.all === "1"
+      ? new Set(DATA.competitions.map(c => c.key))
+      : new Set([DATA.competitions[0].key]);
+    render();
+  }
+});
+
+/* ============================ fixture atoms ============================ */
+function fxRow(f) {
+  const c = COMP[f.comp], mv = MOVED[f.id];
+  const score = f.finished && f.gh != null ? `<span class="sc">${f.gh}&#8211;${f.ga}</span>` : "";
+  const flag = f.disrupted ? `<span class="flag">${esc(f.status)}</span>`
+             : mv && mv.kind === "moved" ? `<span class="flag">&#8635;</span>` : "";
+  return `<button class="fx ${f.finished?"done":""} ${mv?"moved":""} ${f.disrupted?"off":""} ${isBig(f)?"big":""}"
+      style="--c:${c.color}" data-fx="${f.id}"
+      title="${esc(c.name)} &#183; ${esc(f.home)} v ${esc(f.away)}${f.tag ? " &#183; " + esc(f.tag) : ""}">
+      <span class="t tnum">${f.tbd ? "TBD" : timeFmt.format(fxDate(f))}</span>
+      <span class="m">${tname(f.home, f.ht)}<span class="vs">v</span>${tname(f.away, f.at)}</span>${score}${flag}
+    </button>`;
+}
+
+function wfxRow(f) {
+  const c = COMP[f.comp], mv = MOVED[f.id];
+  const score = f.finished && f.gh != null ? ` <b>${f.gh}&#8211;${f.ga}</b>` : "";
+  return `<button class="wfx ${mv?"moved":""} ${isBig(f)?"big":""}" style="--c:${c.color}" data-fx="${f.id}">
+      <span class="top">
+        <span class="t tnum">${f.tbd ? "TBD" : timeFmt.format(fxDate(f))}</span>
+        ${f.disrupted ? `<span class="flag">${esc(f.status)}</span>` : mv ? `<span class="flag">&#8635; moved</span>` : ""}
+        <span class="cmp">${esc(c.short)}</span>
+      </span>
+      <span class="team">${tname(f.home, f.ht)}${score}</span>
+      <span class="team">${tname(f.away, f.at)}</span>
+      ${f.tag ? `<span class="tag">${esc(f.tag)}</span>` : ""}
+      <span class="meta">${esc(shortRound(f.round))}${f.venue ? " &#183; " + esc(f.venue) : ""}</span>
+    </button>`;
+}
+
+/* ============================ views ============================ */
+const viewport = document.getElementById("viewport");
+const EXPANDED = new Set();   // month-grid day cells the reader has opened
+
+function viewWindow() {
+  if (S.view === "week") { const s = startOfWeek(S.cursor); return [s, addDays(s,6)]; }
+  if (S.view === "list" && S.scope === "season") return [SEASON_START, SEASON_END];
+  const s = new Date(S.cursor.getFullYear(), S.cursor.getMonth(), 1);
+  return [s, new Date(S.cursor.getFullYear(), S.cursor.getMonth()+1, 0)];
+}
+
+function renderMonth() {
+  const byDay = bucketByDay(visible());
+  const first = new Date(S.cursor.getFullYear(), S.cursor.getMonth(), 1);
+  const gridStart = startOfWeek(first);
+  const month = S.cursor.getMonth();
+  const CAP = 4;
+
+  let cells = "";
+  for (let i = 0; i < 42; i++) {
+    const d = addDays(gridStart, i);
+    const k = dkey(d);
+    const list = byDay.get(k) || [];
+    const brk = breakAt(k);
+    const cls = ["day", d.getMonth() !== month ? "out" : "", brk && !list.length ? "brk" : "", k === TODAY ? "today" : ""].join(" ");
+    const open = EXPANDED.has(k);
+    const shown = (open ? list : list.slice(0, CAP)).map(fxRow).join("");
+    const more = list.length > CAP
+      ? `<button class="more" data-expand="${k}" aria-expanded="${open}">${
+          open ? "&#8722; SHOW LESS" : `+ SHOW ${list.length - CAP} MORE`}</button>`
+      : "";
+    cells += `<div class="${cls} ${open ? "open" : ""}">
+        <div class="dhead">
+          <button class="dnum tnum" data-jump="${k}" title="Open this week">${d.getDate()}<span class="dmon">${MONTHS[d.getMonth()].slice(0,3)}</span></button>
+        ${brk && !list.length ? `<span class="dbrk">${esc(brk.short || brk.label)}</span>` : ""}
+        ${open ? `<button class="dclose" data-expand="${k}" title="Collapse this day">&#8722; LESS</button>` : ""}</div>
+        ${shown}${more}</div>`;
+  }
+  viewport.innerHTML =
+    `<div class="grid-head">${DAYS.map(d => `<div>${d}</div>`).join("")}</div><div class="month">${cells}</div>`;
+}
+
+function renderWeek() {
+  const byDay = bucketByDay(visible());
+  const s = startOfWeek(S.cursor);
+  let cols = "";
+  for (let i = 0; i < 7; i++) {
+    const d = addDays(s, i), k = dkey(d);
+    const list = byDay.get(k) || [];
+    const brk = breakAt(k);
+    cols += `<div class="wcol ${brk && !list.length ? "brk":""} ${k===TODAY?"today":""}">
+        <div class="whead">
+          <div class="wd">${DAYS[i]}</div>
+          <div class="wn tnum">${d.getDate()} <span style="font-size:.62rem;font-weight:500;color:var(--ink-3)">${MONTHS[d.getMonth()].slice(0,3)}</span></div>
+        </div>
+        ${brk ? `<div class="dbrk" style="padding:.1rem 0 .2rem">${esc(brk.short || brk.label)}</div>` : ""}
+        ${list.length ? list.map(wfxRow).join("") : `<div style="font-family:var(--f-mono);font-size:.6rem;color:var(--ink-3);padding-top:.3rem">&#8212;</div>`}
+      </div>`;
+  }
+  viewport.innerHTML = `<div class="week">${cols}</div>`;
+}
+
+function renderList() {
+  const [s, e] = viewWindow();
+  const lo = dkey(s), hi = dkey(e);
+  const list = visible().filter(f => { const k = dkey(fxDate(f)); return k >= lo && k <= hi; });
+
+  if (!list.length) {
+    viewport.innerHTML = `<div class="list" data-group="${S.group}"><div class="empty">No fixtures match these filters in this range.</div></div>`;
+    return;
+  }
+
+  let groups;
+  if (S.group === "comp") {
+    groups = DATA.competitions
+      .filter(c => S.comps.has(c.key))
+      .map(c => ({
+        title: c.name,
+        sub: `${list.filter(f => f.comp === c.key).length} fixtures`,
+        note: "",
+        rows: list.filter(f => f.comp === c.key).sort((a,b) => a.ts - b.ts),
+      }))
+      .filter(g => g.rows.length);
+  } else {
+    const byDay = bucketByDay(list);
+    groups = [...byDay.keys()].sort().map(k => {
+      const b = breakAt(k);
+      return {
+        title: fullFmt.format(parseKey(k)),
+        sub: k === TODAY ? "TODAY" : "",
+        note: b ? (b.short || b.label) : "",
+        rows: byDay.get(k),
+      };
+    });
+  }
+
+  viewport.innerHTML = `<div class="list" data-group="${S.group}">` + groups.map(g => `
+    <section class="lgroup">
+      <div class="lhead">
+        <span class="lt">${esc(g.title)}</span>
+        <span class="ls">${esc(g.sub)}</span>
+        ${g.note ? `<span class="lb">${esc(g.note)}</span>` : ""}
+      </div>
+      ${g.rows.map(f => {
+        const c = COMP[f.comp], mv = MOVED[f.id], d = fxDate(f);
+        const when = S.group === "comp"
+          ? `${dayFmt.format(d)}` : (f.tbd ? "TBD" : timeFmt.format(d));
+        const score = f.finished && f.gh != null ? `${f.gh}&#8211;${f.ga}` : "";
+        return `<button class="lrow ${mv?"moved":""} ${f.disrupted?"off":""} ${isBig(f)?"big":""}" style="--c:${c.color}" data-fx="${f.id}">
+            <span class="when tnum">${esc(when)}${S.group==="comp" && !f.tbd ? " " + timeFmt.format(d) : ""}</span>
+            <span class="cmp">${esc(c.short)}</span>
+            <span class="match">${tname(f.home, f.ht)}<span class="vs">v</span>${tname(f.away, f.at)}
+              ${f.tag ? `<span class="tag">&#160;${esc(f.tag)}</span>` : ""}
+              ${score ? `<b class="tnum">&#160;${score}</b>` : ""}
+              ${f.disrupted ? `<span class="flag" style="color:var(--signal)">&#160;${esc(f.status)}</span>` : ""}
+              ${mv && mv.kind === "moved" ? `<span style="color:var(--signal)">&#160;&#8635;</span>` : ""}</span>
+            <span class="rt">${esc(shortRound(f.round))}</span>
+          </button>`;
+      }).join("")}
+    </section>`).join("") + `</div>`;
+}
+</script>
+
+<script>
+"use strict";
+
+/* ============================ side panels ============================ */
+function renderPanels() {
+  const changes = (DATA.changes || []).filter(c => S.comps.has(c.comp));
+  const box = document.getElementById("changes");
+  document.getElementById("changeCount").textContent = changes.length ? `${changes.length} logged` : "";
+
+  box.innerHTML = changes.length ? changes.slice(0, 60).map(c => {
+    const col = COMP[c.comp];
+    const from = c.from_utc ? new Date(c.from_utc) : null;
+    const to   = c.to_utc   ? new Date(c.to_utc)   : null;
+    const line = c.kind === "moved"
+      ? `<span class="old">${dayFmt.format(from)}, ${timeFmt.format(from)}</span><span class="arw">&#8594;</span>${dayFmt.format(to)}, ${timeFmt.format(to)}`
+      : `${esc(c.status_long || c.to_status)}${to ? ` &#183; was ${dayFmt.format(to)}` : ""}`;
+    return `<div class="crow" style="--c:${col ? col.color : "var(--rule)"}">
+        <span class="cw">${esc(col ? col.short : c.comp)} &#183; picked up ${esc(c.detected)}</span>
+        <span class="cm">${esc(c.home)} v ${esc(c.away)}</span>
+        <span class="cd">${line}</span>
+      </div>`;
+  }).join("") : `<div class="empty">No changes recorded yet.<br>Reschedules show up here the day after they are announced.</div>`;
+
+  /* breaks -- curated windows first, then stretches the fixture list itself revealed */
+  const bl = [...(DATA.breaks || [])].sort((a,b) => a.start.localeCompare(b.start));
+  document.getElementById("breakCount").textContent = bl.length ? `${bl.length} in season` : "";
+  document.getElementById("breaks").innerHTML = bl.length ? bl.map(b => {
+    const past = b.end < TODAY;
+    const live = b.start <= TODAY && TODAY <= b.end;
+    const days = Math.round((parseKey(b.end) - parseKey(b.start)) / 864e5) + 1;
+    return `<button class="brow ${past?"past":""}" data-jump="${b.start}" style="text-align:left;width:100%">
+        <div class="bl">${esc(b.label)}${live ? ` <span style="color:var(--signal);font-family:var(--f-mono);font-size:.6rem">&#9679; NOW</span>` : ""}</div>
+        <div class="bd">${dayFmt.format(parseKey(b.start))} &#8211; ${dayFmt.format(parseKey(b.end))} &#183; ${days}d${b.source === "detected" ? " &#183; detected from fixture list" : ""}</div>
+        ${b.notes ? `<div class="bn">${esc(b.notes)}</div>` : ""}
+      </button>`;
+  }).join("") : `<div class="empty">No breaks listed.</div>`;
+}
+
+/* ============================ big-match digest ============================ */
+/* The bottom panel: every fixture where BOTH clubs are on the top-club list,
+   inside a one-month window. Chronological, because that is what a calendar
+   reader wants -- the meter carries the ranking instead of the sort order. */
+const bigBody  = document.getElementById("bigBody");
+const spanFmt  = new Intl.DateTimeFormat(undefined, { day:"numeric", month:"short" });
+const BIG_CAP  = 12;   // it sits above the calendar, so keep it to a couple of rows
+let BIG_OPEN   = false;
+
+function bigWindow() {
+  if (S.bigScope === "view") {
+    const s = new Date(S.cursor.getFullYear(), S.cursor.getMonth(), 1);
+    return [s, new Date(S.cursor.getFullYear(), S.cursor.getMonth() + 1, 0)];
+  }
+  const s = new Date(); s.setHours(0, 0, 0, 0);
+  return [s, addDays(s, 29)];
+}
+
+function bigCard(f) {
+  const c = COMP[f.comp], mv = MOVED[f.id], d = fxDate(f);
+  const dots = heatDots(f);
+  const meter = [1,2,3].map(i => `<i class="${i <= dots ? "on" : ""}"></i>`).join("");
+  const score = f.finished && f.gh != null ? ` <span class="sc tnum">${f.gh}&#8211;${f.ga}</span>` : "";
+  const note = f.tag ? `<b class="is-tag">${esc(f.tag)}</b>`
+             : f.disrupted ? esc(f.status_long || f.status)
+             : mv && mv.kind === "moved" ? "&#8635; rescheduled"
+             : esc(shortRound(f.round) || f.venue || "");
+  return `<button class="bcard ${f.finished?"done":""} ${mv?"moved":""} ${f.disrupted?"off":""}"
+      style="--c:${c.color}" data-fx="${f.id}" title="${esc(c.name)}">
+      <span class="bhead">
+        <span class="bdate">${esc(dayFmt.format(d))}</span>
+        <span class="bmeter" role="img" aria-label="Match size ${dots} of 3">${meter}</span>
+      </span>
+      <span class="bteams">${esc(f.home)}<span class="vs">v</span>${esc(f.away)}${score}</span>
+      <span class="bfoot">
+        <span class="bcmp">${esc(c.short)}</span>
+        <span class="btime">${f.tbd ? "TBD" : timeFmt.format(d)}</span>
+        <span class="bnote">${note}</span>
+      </span>
+    </button>`;
+}
+
+function renderBig() {
+  const [s, e] = bigWindow();
+  const lo = dkey(s), hi = dkey(e);
+  const rows = visible()
+    .filter(f => isBig(f))
+    .filter(f => { const k = dkey(fxDate(f)); return k >= lo && k <= hi; })
+    .sort((a, b) => a.ts - b.ts);
+
+  document.querySelectorAll("[data-big]").forEach(b =>
+    b.setAttribute("aria-pressed", b.dataset.big === S.bigScope));
+  document.getElementById("bigWindow").textContent =
+    `${spanFmt.format(s)} \u2013 ${spanFmt.format(e)}`;
+  document.getElementById("bigCount").textContent =
+    rows.length ? `${rows.length} match${rows.length === 1 ? "" : "es"}` : "";
+
+  if (!rows.length) {
+    /* Before the league-phase draw most of Europe's giants are simply not in the
+       feed yet, which is the usual reason this panel is empty in August. */
+    const drawn = DATA.fixtures.some(f => (f.comp === "ucl" || f.comp === "uel") && !f.qual);
+    bigBody.innerHTML = `<div class="empty">No fixture in this window has two top clubs in it.${
+      drawn ? "" : "<br>Champions League and Europa League league-phase ties have not been drawn yet &#8212; they appear here on their own once they are."
+    }</div>`;
+    return;
+  }
+
+  const shown = BIG_OPEN ? rows : rows.slice(0, BIG_CAP);
+  bigBody.innerHTML =
+    `<div class="bgrid">${shown.map(bigCard).join("")}</div>` +
+    (rows.length > BIG_CAP
+      ? `<button class="bmore" data-bigmore="1" aria-expanded="${BIG_OPEN}">${
+          BIG_OPEN ? "&#8722; SHOW FEWER" : `+ SHOW ALL ${rows.length}`}</button>`
+      : "");
+}
+
+document.querySelectorAll("[data-big]").forEach(b => b.onclick = () => {
+  S.bigScope = b.dataset.big; BIG_OPEN = false; render();
+});
+
+/* ============================ fixture detail ============================ */
+const dlg = document.getElementById("dlg");
+document.getElementById("dlgClose").onclick = () => dlg.close();
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+function openFixture(id) {
+  const f = DATA.fixtures.find(x => String(x.id) === String(id));
+  if (!f) return;
+  const c = COMP[f.comp], mv = MOVED[f.id], d = fxDate(f);
+
+  const rows = [
+    ["Kick-off", f.tbd ? "Not yet scheduled" : `${fullFmt.format(d)}<br><b class="tnum">${timeFmt.format(d)}</b> <span style="color:var(--ink-3)">${esc(TZ)}</span>`],
+    ["Round", esc(f.round || "\u2014")],
+    f.venue ? ["Venue", esc(f.venue)] : null,
+    ["Status", esc(f.status_long || f.status)],
+    f.finished && f.gh != null ? ["Result", `<b class="tnum">${f.gh} &#8211; ${f.ga}</b>`] : null,
+  ].filter(Boolean);
+
+  let note = "";
+  if (mv && mv.kind === "moved") {
+    const from = new Date(mv.from_utc);
+    note = `<div class="dlg-note"><b>&#8635; Rescheduled.</b> Was ${fullFmt.format(from)} at ${timeFmt.format(from)}.
+            Change picked up on ${esc(mv.detected)}.</div>`;
+  } else if (f.disrupted) {
+    note = `<div class="dlg-note"><b>${esc(f.status_long || f.status)}.</b>
+            This match is not going ahead as listed. A new date usually appears within a few days.</div>`;
+  }
+
+  document.getElementById("dlgInner").innerHTML = `
+    <div class="dlg-top" style="--c:${c.color}">
+      <div class="dlg-cmp">${esc(c.name)}</div>
+      <h2 class="dlg-match">${esc(f.home)} <span style="color:var(--ink-3);font-weight:400">v</span> ${esc(f.away)}</h2>
+    </div>
+    <div class="dlg-body">
+      ${note}
+      <dl class="dl">${rows.map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
+    </div>`;
+  dlg.showModal();
+}
+
+/* ============================ navigation ============================ */
+function step(dir) {
+  if (S.view === "week") S.cursor = addDays(S.cursor, 7 * dir);
+  else S.cursor = new Date(S.cursor.getFullYear(), S.cursor.getMonth() + dir, 1);
+  render();
+}
+document.getElementById("prev").onclick  = () => step(-1);
+document.getElementById("next").onclick  = () => step(1);
+document.getElementById("today").onclick = () => { S.cursor = new Date(); render(); };
+
+document.querySelectorAll("[data-view]").forEach(b => b.onclick = () => { S.view = b.dataset.view; render(); });
+document.querySelectorAll("[data-group]").forEach(b => b.onclick = () => { S.group = b.dataset.group; render(); });
+document.querySelectorAll("[data-scope]").forEach(b => b.onclick = () => { S.scope = b.dataset.scope; render(); });
+
+const qbox = document.getElementById("q");
+qbox.value = S.q;
+qbox.addEventListener("input", () => { S.q = qbox.value; render(); });
+
+document.addEventListener("click", e => {
+  const fx = e.target.closest("[data-fx]");
+  if (fx) return openFixture(fx.dataset.fx);
+  const exp = e.target.closest("[data-expand]");
+  if (exp) {
+    const k = exp.dataset.expand;
+    EXPANDED.has(k) ? EXPANDED.delete(k) : EXPANDED.add(k);
+    render();
+    const again = document.querySelector(`.more[data-expand="${k}"]`);
+    if (again) again.focus();
+    return;
+  }
+  if (e.target.closest("[data-bigmore]")) {
+    BIG_OPEN = !BIG_OPEN;
+    render();
+    const again = document.querySelector("[data-bigmore]");
+    if (again) again.focus();
+    return;
+  }
+  const jump = e.target.closest("[data-jump]");
+  if (jump) { S.cursor = parseKey(jump.dataset.jump); S.view = "week"; render(); }
+});
+
+document.addEventListener("keydown", e => {
+  if (dlg.open) return;
+  if (e.target instanceof Element && e.target.matches("input, textarea")) return;
+  if (e.key === "ArrowLeft")  { e.preventDefault(); step(-1); }
+  if (e.key === "ArrowRight") { e.preventDefault(); step(1); }
+  if (e.key === "Escape" && EXPANDED.size) { e.preventDefault(); EXPANDED.clear(); render(); }
+  if (e.key === "t" || e.key === "T") { S.cursor = new Date(); render(); }
+  if (e.key === "m") { S.view = "month"; render(); }
+  if (e.key === "w") { S.view = "week";  render(); }
+  if (e.key === "l") { S.view = "list";  render(); }
+});
+
+/* ============================ render ============================ */
+function periodLabel() {
+  if (S.view === "week") {
+    const s = startOfWeek(S.cursor), e = addDays(s, 6);
+    const sameMonth = s.getMonth() === e.getMonth();
+    return sameMonth
+      ? `${s.getDate()}&#8211;${e.getDate()} ${MONTHS[s.getMonth()]}`
+      : `${s.getDate()} ${MONTHS[s.getMonth()].slice(0,3)} &#8211; ${e.getDate()} ${MONTHS[e.getMonth()].slice(0,3)}`;
+  }
+  if (S.view === "list" && S.scope === "season") return DATA.season_label + " season";
+  return `${MONTHS[S.cursor.getMonth()]} ${S.cursor.getFullYear()}`;
+}
+
+function render() {
+  document.querySelectorAll("[data-view]").forEach(b => b.setAttribute("aria-pressed", b.dataset.view === S.view));
+  document.querySelectorAll("[data-group]").forEach(b => b.setAttribute("aria-pressed", b.dataset.group === S.group));
+  document.querySelectorAll("[data-scope]").forEach(b => b.setAttribute("aria-pressed", b.dataset.scope === S.scope));
+  document.getElementById("groupBar").hidden = S.view !== "list";
+  document.getElementById("scopeBar").hidden = S.view !== "list";
+  document.getElementById("period").innerHTML = periodLabel();
+
+  renderRail();
+  if (S.view === "month") renderMonth();
+  else if (S.view === "week") renderWeek();
+  else renderList();
+  renderBig();
+  renderPanels();
+  renderRibbon();
+  save();
+}
+
+/* ============================ boot ============================ */
+document.getElementById("seasonTag").textContent = DATA.season_label;
+document.getElementById("syncedAt").textContent =
+  new Intl.DateTimeFormat(undefined, { dateStyle:"medium", timeStyle:"short" }).format(new Date(DATA.generated_at));
+document.getElementById("tzNote").textContent = `All times ${TZ}`;
+
+const failed = (DATA.failures || []).length;
+document.getElementById("foot").innerHTML =
+  `${DATA.fixtures.length} fixtures across ${DATA.competitions.length} competitions &#183; season ${esc(DATA.season_label)}.
+   Times are converted to your device's time zone (<code>${esc(TZ)}</code>) &#8212; the same page shows local time wherever it is opened.
+   Fixtures come from ESPN's public soccer feed and are re-synced three times a day; the <b>Schedule changes</b> panel logs every kick-off that has moved since the previous sync.
+   <b>Matches that matter</b> lists fixtures between two of the ${(DATA.top_clubs || []).length} clubs on the top-club list; elsewhere a listed club's name is set in bold, and a match between two of them is ringed.
+   <b>Top clubs only</b> is on by default and hides everything without a listed club in it &#8212; the button above the calendar turns it off.
+   ${failed ? `<br><b style="color:var(--signal)">${failed} competition(s) failed to sync on the last run.</b>` : ""}
+   <br>Keyboard: <code>&#8592;</code>/<code>&#8594;</code> move, <code>t</code> today, <code>m</code>/<code>w</code>/<code>l</code> switch view.`;
+
+render();
+</script>

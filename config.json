@@ -1,0 +1,570 @@
+{
+  "season": 2026,
+  "season_label": "2026/27",
+  "source": "ESPN public soccer feed (site.api.espn.com)",
+  "window_start": "2026-07-01",
+  "window_end": "2027-06-30",
+  "competitions": [
+    {
+      "key": "epl",
+      "name": "Premier League",
+      "short": "EPL",
+      "group": "England",
+      "tier": "league",
+      "color": "#8244c9",
+      "slugs": [
+        "eng.1"
+      ]
+    },
+    {
+      "key": "fac",
+      "name": "FA Cup",
+      "short": "FA",
+      "group": "England",
+      "tier": "cup",
+      "color": "#0d8b8b",
+      "slugs": [
+        "eng.fa"
+      ]
+    },
+    {
+      "key": "efl",
+      "name": "EFL Cup",
+      "short": "EFL",
+      "group": "England",
+      "tier": "cup",
+      "color": "#4a90d9",
+      "slugs": [
+        "eng.league_cup"
+      ]
+    },
+    {
+      "key": "liga",
+      "name": "La Liga",
+      "short": "LIG",
+      "group": "Spain",
+      "tier": "league",
+      "color": "#d92d3e",
+      "slugs": [
+        "esp.1"
+      ]
+    },
+    {
+      "key": "cdr",
+      "name": "Copa del Rey",
+      "short": "CDR",
+      "group": "Spain",
+      "tier": "cup",
+      "color": "#e0518a",
+      "slugs": [
+        "esp.copa_del_rey"
+      ]
+    },
+    {
+      "key": "sce",
+      "name": "Supercopa de Espana",
+      "short": "SUP",
+      "group": "Spain",
+      "tier": "cup",
+      "color": "#b08420",
+      "slugs": [
+        "esp.super_cup"
+      ]
+    },
+    {
+      "key": "ucl",
+      "name": "Champions League",
+      "short": "UCL",
+      "group": "Europe",
+      "tier": "euro",
+      "color": "#2b3fb8",
+      "slugs": [
+        "uefa.champions",
+        "uefa.champions_qual"
+      ]
+    },
+    {
+      "key": "uel",
+      "name": "Europa League",
+      "short": "UEL",
+      "group": "Europe",
+      "tier": "euro",
+      "color": "#f07817",
+      "slugs": [
+        "uefa.europa",
+        "uefa.europa_qual"
+      ]
+    },
+    {
+      "key": "uecl",
+      "name": "Conference League",
+      "short": "UECL",
+      "group": "Europe",
+      "tier": "euro",
+      "color": "#5aa829",
+      "slugs": [
+        "uefa.europa.conf",
+        "uefa.europa.conf_qual"
+      ]
+    }
+  ],
+  "top_teams": {
+    "_note": "Clubs whose matches get highlighted on the wallchart. tier 1 = elite, tier 2 = big. A match with BOTH clubs on this list is a 'big match' (gold rail + listed in the bottom panel); one club on the list is merely flagged. 'aka' holds alternative spellings so the club is still recognised whatever the feed calls it. Edit this list and re-run `python3 build.py` — no re-sync needed.",
+    "clubs": [
+      {
+        "name": "Arsenal",
+        "tier": 1,
+        "group": "England",
+        "aka": []
+      },
+      {
+        "name": "Liverpool",
+        "tier": 1,
+        "group": "England",
+        "aka": []
+      },
+      {
+        "name": "Manchester City",
+        "tier": 1,
+        "group": "England",
+        "aka": [
+          "Man City"
+        ]
+      },
+      {
+        "name": "Manchester United",
+        "tier": 1,
+        "group": "England",
+        "aka": [
+          "Man Utd",
+          "Man United",
+          "Manchester Utd"
+        ]
+      },
+      {
+        "name": "Chelsea",
+        "tier": 1,
+        "group": "England",
+        "aka": []
+      },
+      {
+        "name": "Tottenham Hotspur",
+        "tier": 1,
+        "group": "England",
+        "aka": [
+          "Tottenham",
+          "Spurs"
+        ]
+      },
+      {
+        "name": "Newcastle United",
+        "tier": 2,
+        "group": "England",
+        "aka": [
+          "Newcastle"
+        ]
+      },
+      {
+        "name": "Aston Villa",
+        "tier": 2,
+        "group": "England",
+        "aka": []
+      },
+      {
+        "name": "Real Madrid",
+        "tier": 1,
+        "group": "Spain",
+        "aka": []
+      },
+      {
+        "name": "Barcelona",
+        "tier": 1,
+        "group": "Spain",
+        "aka": [
+          "FC Barcelona",
+          "Barca",
+          "Barça"
+        ]
+      },
+      {
+        "name": "Atletico Madrid",
+        "tier": 1,
+        "group": "Spain",
+        "aka": [
+          "Atlético Madrid",
+          "Atlético de Madrid",
+          "Atletico de Madrid",
+          "Atleti"
+        ]
+      },
+      {
+        "name": "Athletic Club",
+        "tier": 2,
+        "group": "Spain",
+        "aka": [
+          "Athletic Bilbao",
+          "Athletic Club Bilbao"
+        ]
+      },
+      {
+        "name": "Sevilla",
+        "tier": 2,
+        "group": "Spain",
+        "aka": [
+          "Sevilla FC"
+        ]
+      },
+      {
+        "name": "Villarreal",
+        "tier": 2,
+        "group": "Spain",
+        "aka": [
+          "Villarreal CF"
+        ]
+      },
+      {
+        "name": "Bayern Munich",
+        "tier": 1,
+        "group": "Europe",
+        "aka": [
+          "Bayern",
+          "Bayern Munchen",
+          "Bayern München",
+          "FC Bayern Munich"
+        ]
+      },
+      {
+        "name": "Paris Saint-Germain",
+        "tier": 1,
+        "group": "Europe",
+        "aka": [
+          "PSG",
+          "Paris SG",
+          "Paris Saint Germain"
+        ]
+      },
+      {
+        "name": "Inter Milan",
+        "tier": 1,
+        "group": "Europe",
+        "aka": [
+          "Inter",
+          "Internazionale",
+          "Inter Milano",
+          "FC Internazionale Milano"
+        ]
+      },
+      {
+        "name": "AC Milan",
+        "tier": 1,
+        "group": "Europe",
+        "aka": [
+          "Milan"
+        ]
+      },
+      {
+        "name": "Juventus",
+        "tier": 1,
+        "group": "Europe",
+        "aka": [
+          "Juventus FC",
+          "Juve"
+        ]
+      },
+      {
+        "name": "Borussia Dortmund",
+        "tier": 1,
+        "group": "Europe",
+        "aka": [
+          "Dortmund",
+          "BVB"
+        ]
+      },
+      {
+        "name": "Napoli",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "SSC Napoli"
+        ]
+      },
+      {
+        "name": "Atalanta",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "Atalanta BC"
+        ]
+      },
+      {
+        "name": "Roma",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "AS Roma"
+        ]
+      },
+      {
+        "name": "Bayer Leverkusen",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "Leverkusen"
+        ]
+      },
+      {
+        "name": "RB Leipzig",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "Leipzig",
+          "RasenBallsport Leipzig"
+        ]
+      },
+      {
+        "name": "Ajax",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "Ajax Amsterdam",
+          "AFC Ajax"
+        ]
+      },
+      {
+        "name": "PSV Eindhoven",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "PSV"
+        ]
+      },
+      {
+        "name": "Feyenoord",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "Feyenoord Rotterdam"
+        ]
+      },
+      {
+        "name": "Benfica",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "SL Benfica"
+        ]
+      },
+      {
+        "name": "Porto",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "FC Porto"
+        ]
+      },
+      {
+        "name": "Sporting CP",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "Sporting",
+          "Sporting Lisbon",
+          "Sporting Clube de Portugal"
+        ]
+      },
+      {
+        "name": "Marseille",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "Olympique Marseille",
+          "Olympique de Marseille",
+          "OM"
+        ]
+      },
+      {
+        "name": "Galatasaray",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "Galatasaray SK"
+        ]
+      },
+      {
+        "name": "Celtic",
+        "tier": 2,
+        "group": "Europe",
+        "aka": [
+          "Celtic FC",
+          "Glasgow Celtic"
+        ]
+      }
+    ],
+    "rivalries": [
+      {
+        "a": "Real Madrid",
+        "b": "Barcelona",
+        "label": "El Clásico"
+      },
+      {
+        "a": "Real Madrid",
+        "b": "Atletico Madrid",
+        "label": "Madrid derby"
+      },
+      {
+        "a": "Sevilla",
+        "b": "Real Betis",
+        "label": "Seville derby"
+      },
+      {
+        "a": "Athletic Club",
+        "b": "Real Sociedad",
+        "label": "Basque derby"
+      },
+      {
+        "a": "Barcelona",
+        "b": "Espanyol",
+        "label": "Barcelona derby"
+      },
+      {
+        "a": "Manchester United",
+        "b": "Manchester City",
+        "label": "Manchester derby"
+      },
+      {
+        "a": "Liverpool",
+        "b": "Everton",
+        "label": "Merseyside derby"
+      },
+      {
+        "a": "Arsenal",
+        "b": "Tottenham Hotspur",
+        "label": "North London derby"
+      },
+      {
+        "a": "Liverpool",
+        "b": "Manchester United",
+        "label": "North-West derby"
+      },
+      {
+        "a": "Inter Milan",
+        "b": "AC Milan",
+        "label": "Derby della Madonnina"
+      },
+      {
+        "a": "Juventus",
+        "b": "Inter Milan",
+        "label": "Derby d'Italia"
+      },
+      {
+        "a": "Roma",
+        "b": "Lazio",
+        "label": "Rome derby"
+      },
+      {
+        "a": "Bayern Munich",
+        "b": "Borussia Dortmund",
+        "label": "Der Klassiker"
+      },
+      {
+        "a": "Celtic",
+        "b": "Rangers",
+        "label": "Old Firm"
+      },
+      {
+        "a": "Benfica",
+        "b": "Porto",
+        "label": "O Clássico"
+      },
+      {
+        "a": "Benfica",
+        "b": "Sporting CP",
+        "label": "Lisbon derby"
+      },
+      {
+        "a": "Ajax",
+        "b": "Feyenoord",
+        "label": "De Klassieker"
+      }
+    ],
+    "stage_bonus": {
+      "final": 3,
+      "semi": 2,
+      "quarter": 1,
+      "round of 16": 1
+    }
+  },
+  "breaks": [
+    {
+      "label": "International break — September/October",
+      "short": "INT'L",
+      "kind": "international",
+      "start": "2026-09-21",
+      "end": "2026-10-06",
+      "source": "confirmed",
+      "notes": "New 16-day merged window, up to 4 national-team matches. First time under FIFA's 2025-30 calendar — replaces the old separate September and October breaks. Blank domestic weekends: 26-27 Sep and 3-4 Oct."
+    },
+    {
+      "label": "International break — November",
+      "short": "INT'L",
+      "kind": "international",
+      "start": "2026-11-09",
+      "end": "2026-11-17",
+      "source": "confirmed",
+      "notes": "Nations League matchdays 5-6 and AFCON 2027 qualifiers. Blank domestic weekend: 14-15 Nov."
+    },
+    {
+      "label": "International break — March",
+      "short": "INT'L",
+      "kind": "international",
+      "start": "2027-03-22",
+      "end": "2027-03-30",
+      "source": "confirmed",
+      "notes": "Nations League quarter-finals and promotion/relegation play-offs, plus AFCON qualifiers. Blank domestic weekend: 27-28 Mar."
+    },
+    {
+      "label": "International break — June",
+      "short": "INT'L",
+      "kind": "international",
+      "start": "2027-06-07",
+      "end": "2027-06-15",
+      "source": "confirmed",
+      "notes": "Falls after both domestic seasons end (30 May) and after the Champions League final (5 Jun), so it causes no club disruption."
+    },
+    {
+      "label": "La Liga winter break",
+      "short": "WINTER",
+      "kind": "winter",
+      "start": "2026-12-22",
+      "end": "2027-01-02",
+      "source": "confirmed",
+      "notes": "No Spanish league football. Standing LaLiga-AFE agreement. The Premier League has NO equivalent break and plays right through — only a rule guaranteeing 60 hours between rounds."
+    },
+    {
+      "label": "Supercopa de Espana — Istanbul",
+      "short": "SUPERCOPA",
+      "kind": "cup",
+      "start": "2027-02-02",
+      "end": "2027-02-07",
+      "source": "confirmed",
+      "notes": "Moved out of Saudi Arabia and out of January (RFEF, 13 Aug 2026) because of the AFC Asian Cup. Causes La Liga postponements for the four clubs involved."
+    },
+    {
+      "label": "Premier League January gap (FA Cup third round)",
+      "short": "FA CUP R3",
+      "kind": "gap",
+      "start": "2027-01-06",
+      "end": "2027-01-16",
+      "source": "projected",
+      "notes": "Projected, not officially confirmed. Expected to be filled by the FA Cup third round."
+    }
+  ],
+  "gap_detection": {
+    "enabled": true,
+    "min_days": 11,
+    "watch": [
+      "epl",
+      "liga"
+    ]
+  }
+}
