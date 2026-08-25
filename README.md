@@ -2,56 +2,48 @@
 
 A fixture calendar for the 2026/27 season covering the Premier League, La Liga,
 both English domestic cups, both Spanish cups, and all three UEFA competitions.
-It refreshes itself once a day, keeps a record of every kick-off that moves, and
-picks the big-club fixtures out of the noise.
+It refreshes itself four times a day, keeps a record of every kick-off that moves,
+and picks the big-club fixtures out of the noise.
 
-**Shareable page:** https://claude.ai/code/artifact/65e39225-1810-4be7-aee5-f108f2e176d4
-**Always-fresh local copy:** open `calendar.html` in this folder (bookmark it)
+**Live page:** https://vonapets.github.io/football-calendar/
+
+Send that link to anyone. It rebuilds itself four times a day on GitHub's servers,
+so whoever opens it — today, next week, on a phone in another country — gets the
+current fixtures, scores and reschedules. Nobody has to publish anything.
 
 ---
 
 ## How it runs
 
-A background job is scheduled at **07:15, 13:15, 20:15 and 23:45**, plus a catch-up
-every six hours. It needs no API key and no password.
+`.github/workflows/sync.yml` runs on GitHub Actions at **02:30, 08:30, 14:30 and
+22:45 UTC**. Each run pulls the nine competitions from ESPN, diffs them against the
+previous snapshot, records anything that moved, rebuilds the page, and deploys it
+to GitHub Pages. No API key, no password, no laptop.
 
-**What actually happens is worth knowing.** Measured over 20–25 Aug 2026, the 07:15
-and 20:15 alarms never fired once — the Mac was asleep, and a slept-through
-`StartCalendarInterval` is not reliably run on wake. The six-hourly `StartInterval`
-did all the real work, because that one *does* fire on wake once its interval has
-elapsed. Net result was three syncs a day at roughly 02:20, 13:20 and 19:25, with a
-median gap of 7 hours and a worst case of 13.
+The **22:45** run is the one that earns its place: European kick-offs finish around
+21:30 UTC, so it lands the night's results before the day turns over.
 
-The **23:45** run is the one that earns its place: European kick-offs finish around
-22:45, so without it a night's results waited until the 02:20 catch-up. It only
-fires if the Mac is awake at that time — if the lid is shut by 23:00, those results
-still land on the next wake, as before.
+Nothing runs on the Mac any more, and that is the point. The old `launchd` job was
+switched off on 25 Aug 2026 — it could only update the page when the machine
+happened to be awake, and over 20–25 Aug two of its four alarms never fired once,
+because a slept-through `StartCalendarInterval` is not reliably run on wake. The
+plist is parked at `~/Library/LaunchAgents/com.wallchart.daily.plist.disabled` if it
+is ever wanted back; `run.sh` still works by hand for a local build.
 
-Scheduled runs skip if the data is under **three** hours old, so overlapping triggers
-cost nothing. That threshold has to stay below the evening-to-23:45 gap (~4.3h) or
-the late run would skip itself — it was 5 hours and did exactly that.
+To watch a run, or force one immediately:
 
-    ~/football-calendar/run.sh              # sync now, by hand
-    ~/football-calendar/run.sh --scheduled  # sync only if stale (what the job runs)
+    gh run list   --repo vonapets/football-calendar
+    gh workflow run sync.yml --repo vonapets/football-calendar
 
-Each run pulls fixtures, compares them against yesterday's, records anything that
-moved, and rebuilds `calendar.html`. Output is logged to `logs/`.
+There is also a **Run workflow** button on the Actions tab.
 
-To check it is scheduled:
+### Two things worth knowing
 
-    launchctl print gui/$(id -u)/com.wallchart.daily | grep -E "state|runs"
-
-To turn it off:
-
-    launchctl bootout gui/$(id -u)/com.wallchart.daily
-
-### The one manual step
-
-The local `calendar.html` updates on its own. The **shareable claude.ai link does
-not** — publishing to it needs an interactive Claude Code session. When you want
-the shared page brought up to date, ask Claude:
-
-> update my football calendar artifact
+- **GitHub Pages caches for ten minutes.** A refresh straight after a deploy can
+  still serve the previous copy for a few minutes. It sorts itself out.
+- **Scheduled workflows are disabled after 60 days of repository inactivity.** The
+  sync commits a snapshot on most runs, which counts as activity, so this should
+  never trigger during a season. GitHub emails the repo owner before it does.
 
 ---
 
@@ -77,7 +69,8 @@ which serves all nine competitions from one documented API.
 | `config.json` | Competitions, the season window, the confirmed break dates, and the top-club list. Edit this, not the code. |
 | `sync.py` | Fetches fixtures, works out what changed since yesterday, writes `data/`. |
 | `build.py` | Turns the saved data into `calendar.html`. |
-| `run.sh` | Does both, and keeps a log. This is what the daily job runs. |
+| `.github/workflows/sync.yml` | The schedule. Runs the sync on GitHub's servers and publishes the page. |
+| `run.sh` | Sync and build locally, by hand. No longer scheduled. |
 | `template.html` | The page design. Only touch this to change how the calendar looks. |
 | `test_diff.py` | Proves the reschedule detection still works. Run after changing `sync.py`. |
 | `data/fixtures.json` | Today's snapshot. |
