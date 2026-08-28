@@ -1,1 +1,178 @@
-[]
+[
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914260,
+  "comp": "efl",
+  "home": "Manchester City",
+  "away": "Norwich City",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-17T18:30:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914258,
+  "comp": "efl",
+  "home": "Coventry City",
+  "away": "Aston Villa",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-16T19:00:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914257,
+  "comp": "efl",
+  "home": "Liverpool",
+  "away": "Tottenham Hotspur",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-16T19:00:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914261,
+  "comp": "efl",
+  "home": "Manchester United",
+  "away": "Brighton & Hove Albion",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-16T19:00:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914266,
+  "comp": "efl",
+  "home": "Fleetwood Town",
+  "away": "Sheffield United",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-16T18:45:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914268,
+  "comp": "efl",
+  "home": "Ipswich Town",
+  "away": "Arsenal",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-15T19:00:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914285,
+  "comp": "efl",
+  "home": "Reading",
+  "away": "Brentford",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-15T19:00:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914284,
+  "comp": "efl",
+  "home": "Peterborough United",
+  "away": "Barnsley",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-15T18:45:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914283,
+  "comp": "efl",
+  "home": "West Ham United",
+  "away": "Fulham",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-15T18:45:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914256,
+  "comp": "efl",
+  "home": "Chelsea",
+  "away": "Leeds United",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-09T19:00:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914282,
+  "comp": "efl",
+  "home": "Everton",
+  "away": "Wolverhampton Wanderers",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-09T18:45:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914255,
+  "comp": "efl",
+  "home": "Millwall",
+  "away": "Newcastle United",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-08T19:00:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914267,
+  "comp": "efl",
+  "home": "AFC Bournemouth",
+  "away": "Lincoln City",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-08T18:45:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914269,
+  "comp": "efl",
+  "home": "Crystal Palace",
+  "away": "Middlesbrough",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-08T18:45:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914254,
+  "comp": "efl",
+  "home": "Leyton Orient",
+  "away": "Bradford City",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-08T18:45:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-08-28",
+  "kind": "moved",
+  "id": 401914259,
+  "comp": "efl",
+  "home": "Sunderland",
+  "away": "Hull City",
+  "from_utc": "2026-09-08T18:00:00Z",
+  "to_utc": "2026-09-08T18:45:00Z",
+  "round": "Third Round"
+ }
+]
