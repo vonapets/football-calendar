@@ -13,6 +13,17 @@
  {
   "detected": "2026-08-29",
   "kind": "moved",
+  "id": 401885449,
+  "comp": "prim",
+  "home": "Sporting CP",
+  "away": "C.D. Nacional",
+  "from_utc": "2026-09-04T19:15:00Z",
+  "to_utc": "2026-09-05T19:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-08-29",
+  "kind": "moved",
   "id": 401888304,
   "comp": "slig",
   "home": "Istanbul Basaksehir",
