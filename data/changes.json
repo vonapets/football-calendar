@@ -1,5 +1,16 @@
 [
  {
+  "detected": "2026-08-29",
+  "kind": "moved",
+  "id": 401879272,
+  "comp": "epl",
+  "home": "Manchester City",
+  "away": "Sunderland",
+  "from_utc": "2026-09-19T14:00:00Z",
+  "to_utc": "2026-09-20T13:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-08-28",
   "kind": "moved",
   "id": 401914260,

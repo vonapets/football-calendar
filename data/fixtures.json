@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T23:36:55Z",
+ "generated_at": "2026-08-29T03:53:51Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -11071,24 +11071,6 @@
    "finished": false
   },
   {
-   "id": 401879272,
-   "comp": "epl",
-   "utc": "2026-09-19T14:00:00Z",
-   "ts": 1789826400,
-   "status": "NS",
-   "status_long": "Not started",
-   "round": "",
-   "home": "Manchester City",
-   "away": "Sunderland",
-   "venue": "Etihad Stadium",
-   "gh": null,
-   "ga": null,
-   "tbd": false,
-   "qual": false,
-   "disrupted": false,
-   "finished": false
-  },
-  {
    "id": 401879271,
    "comp": "epl",
    "utc": "2026-09-19T14:00:00Z",
@@ -11135,6 +11117,24 @@
    "home": "AFC Bournemouth",
    "away": "Liverpool",
    "venue": "Vitality Stadium",
+   "gh": null,
+   "ga": null,
+   "tbd": false,
+   "qual": false,
+   "disrupted": false,
+   "finished": false
+  },
+  {
+   "id": 401879272,
+   "comp": "epl",
+   "utc": "2026-09-20T13:00:00Z",
+   "ts": 1789909200,
+   "status": "NS",
+   "status_long": "Not started",
+   "round": "",
+   "home": "Manchester City",
+   "away": "Sunderland",
+   "venue": "Etihad Stadium",
    "gh": null,
    "ga": null,
    "tbd": false,
@@ -22963,6 +22963,17 @@
   }
  ],
  "changes": [
+  {
+   "detected": "2026-08-29",
+   "kind": "moved",
+   "id": 401879272,
+   "comp": "epl",
+   "home": "Manchester City",
+   "away": "Sunderland",
+   "from_utc": "2026-09-19T14:00:00Z",
+   "to_utc": "2026-09-20T13:00:00Z",
+   "round": ""
+  },
   {
    "detected": "2026-08-28",
    "kind": "moved",
