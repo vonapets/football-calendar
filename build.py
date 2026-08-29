@@ -9,11 +9,11 @@ from __future__ import annotations
 
 import json
 import random
-import re
 import sys
-import unicodedata
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+
+from clubs import club_key, top_index
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "calendar.html"
@@ -43,8 +43,10 @@ def demo_payload(cfg: dict) -> dict:
     fixtures, fid = [], 900000
     for comp in cfg["competitions"]:
         key = comp["key"]
-        teams = squads[key]
-        every = weeks[key]
+        # comps added to config.json without a demo squad still get plausible
+        # filler, so --demo keeps working as a layout check for the whole rail
+        teams = squads.get(key) or squads["ucl"]
+        every = weeks.get(key, 3 if comp["tier"] != "league" else 1)
         d = start + timedelta(days=rng.randint(0, 6))
         rnd = 1
         while d < datetime(2027, 5, 24, tzinfo=timezone.utc):
@@ -101,28 +103,6 @@ def demo_payload(cfg: dict) -> dict:
 # into Inter Milan. Names the key misses are reported at build time instead.
 # ---------------------------------------------------------------------------
 
-# ornamental tokens that carry no identity when they sit at either end of a name
-_TRIM = {
-    "fc", "cf", "ac", "as", "sc", "cd", "ud", "rc", "rcd", "afc", "sk", "fk",
-    "ss", "ssc", "us", "cp", "sad", "bc", "calcio", "club", "de", "the",
-    "football", "futbol", "fussball",
-}
-
-
-def club_key(name: str) -> str:
-    """Reduce a club name to its comparison key."""
-    s = unicodedata.normalize("NFKD", str(name or ""))
-    s = "".join(ch for ch in s if not unicodedata.combining(ch))
-    s = s.replace("&", " and ")
-    s = re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
-    parts = s.split()
-    while parts and parts[0] in _TRIM:
-        parts.pop(0)
-    while parts and parts[-1] in _TRIM:
-        parts.pop()
-    return " ".join(parts) or s
-
-
 def stage_of(round_name: str, table: dict):
     """(bonus, label) for a knockout round. Checked longest-name first so
     'Semi-finals' is never read as a final."""
@@ -150,12 +130,7 @@ def annotate_top(payload: dict, cfg: dict) -> dict:
     clubs = top.get("clubs") or []
     stage = top.get("stage_bonus") or {}
 
-    # comparison key -> club record. Later entries never clobber earlier ones, so
-    # a display name always beats an alias if the two ever collide.
-    index: dict = {}
-    for c in clubs:
-        for n in [c["name"], *(c.get("aka") or [])]:
-            index.setdefault(club_key(n), c)
+    index = top_index(cfg)
 
     derby = {}
     for r in top.get("rivalries") or []:

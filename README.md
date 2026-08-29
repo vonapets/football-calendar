@@ -1,7 +1,9 @@
 # Season Wallchart
 
-A fixture calendar for the 2026/27 season covering the Premier League, La Liga,
-both English domestic cups, both Spanish cups, and all three UEFA competitions.
+A fixture calendar for the 2026/27 season covering the Premier League and La Liga
+in full, all three UEFA competitions, and the top clubs' games in seven more
+European countries — the Bundesliga, Serie A, Ligue 1, the Eredivisie, the Primeira
+Liga, the Scottish Premiership and the Super Lig, plus their domestic cups.
 It refreshes itself four times a day, keeps a record of every kick-off that moves,
 and picks the big-club fixtures out of the noise.
 
@@ -16,7 +18,7 @@ current fixtures, scores and reschedules. Nobody has to publish anything.
 ## How it runs
 
 `.github/workflows/sync.yml` runs on GitHub Actions at **02:30, 08:30, 14:30 and
-22:45 UTC**. Each run pulls the nine competitions from ESPN, diffs them against the
+22:45 UTC**. Each run pulls the 22 competitions from ESPN, diffs them against the
 previous snapshot, records anything that moved, rebuilds the page, and deploys it
 to GitHub Pages. No API key, no password, no laptop.
 
@@ -60,7 +62,7 @@ wiping the calendar. It is also why the shared page is best kept private rather
 than circulated widely.
 
 If it ever breaks for good, the paid alternative is API-Football Pro ($19/month),
-which serves all nine competitions from one documented API.
+which serves all 22 competitions from one documented API.
 
 ## What the pieces do
 
@@ -108,7 +110,7 @@ Spain, twenty from the rest of Europe.
 
 - **In the calendar itself.** A listed club's name is set in bold. When *both*
   clubs are listed, the whole fixture is ringed and lifted off the card. No new
-  colour is used for this — the nine competition colours plus orange-for-moved
+  colour is used for this — the competition colours plus orange-for-moved
   and ochre-for-break already fill the palette, so importance is carried by
   weight and contrast instead.
 - **In the "Matches that matter" panel**, directly above the calendar. Every
@@ -121,7 +123,7 @@ Spain, twenty from the rest of Europe.
 
 **Top clubs only**, the checkbox at the head of the filter rail, is **on by
 default** — including for anyone opening the shared link. It hides every fixture
-without a listed club in it (451 of 1250 survive). Clicking it shows everything;
+without a listed club in it (1121 of 1929 survive). Clicking it shows everything;
 the choice is remembered per browser.
 
 ### Changing the list
@@ -130,17 +132,23 @@ Edit `top_teams.clubs` in `config.json` and run `python3 build.py` — no re-syn
 it takes a second. `tier` is 1 for elite and 2 for big; `aka` holds alternative
 spellings, because the feed's idea of a club's name is not always yours.
 
-`build.py` prints any configured club it could not find in the fixture list. In
-August that is normal and expected — Bayern, PSG, Inter and the rest only enter
-the feed once the Champions League league phase is drawn. After the draw, a name
-still on that list means the spelling needs an `aka` entry.
+`build.py` prints any configured club it could not find in the fixture list. Since
+every listed club's domestic league is now synced, a name on that list means the
+spelling needs an `aka` entry — the feed's idea of a club's name is not always
+yours (`Internazionale`, `Ajax Amsterdam`, `Feyenoord Rotterdam`).
 
 ## Things worth knowing
 
-- **Five competitions are empty right now** — the FA Cup, Copa del Rey and the
-  three UEFA league phases have not been drawn yet. No source anywhere has those
-  fixtures. They fill in automatically as the draws happen (UEFA late August,
-  FA Cup and Copa del Rey late October).
+- **The undrawn competitions are empty right now** — the FA Cup, Copa del Rey and
+  the three UEFA league phases. No source anywhere has those fixtures. They fill
+  in automatically as the draws happen (UEFA late August, FA Cup and Copa del Rey
+  late October). The foreign cups fill round by round for the same reason: only
+  the rounds our clubs have actually been drawn into exist yet.
+- **The foreign leagues are filtered, the English and Spanish ones are not.** Any
+  competition carrying `top_only: true` in `config.json` keeps only fixtures with
+  a top club in them, which is why the Bundesliga shows 124 fixtures and not 306.
+  It is Bayern, Dortmund, Leverkusen and Leipzig's season, not the whole league's.
+  ESPN publishes no Turkish Cup feed, so Galatasaray is Super Lig only.
 - **European qualifying is hidden by default.** 428 early-round qualifiers would
   otherwise bury the fixtures you care about. The toggle is above the calendar.
 - **`TBD` instead of a time** means the kick-off is not yet confirmed — common for

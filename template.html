@@ -565,7 +565,13 @@ const S = {
   group: "date",
   scope: "month",
   q: "",
-  comps: Array.isArray(saved.comps) ? saved.comps : DATA.competitions.map(c => c.key),
+  /* A returning visitor's saved selection predates any competition added since --
+     enable those rather than hiding them, or a new league would arrive switched
+     off for exactly the people who use the calendar most. */
+  comps: Array.isArray(saved.comps)
+    ? [...saved.comps, ...DATA.competitions.map(c => c.key)
+        .filter(k => !(saved.known || saved.comps).includes(k))]
+    : DATA.competitions.map(c => c.key),
   qual: saved.qual === true,
   top: saved.top !== false,                                  // big-club matches only, ON by default
   bigScope: saved.bigScope === "view" ? "view" : "30",       // window for the bottom panel
@@ -585,7 +591,8 @@ S.cursor = clampToSeason(new Date());
 const save = () => {
   try {
     localStorage.setItem(STORE, JSON.stringify(
-      { comps: [...S.comps], qual: S.qual, top: S.top, bigScope: S.bigScope }));
+      { comps: [...S.comps], known: DATA.competitions.map(c => c.key),
+        qual: S.qual, top: S.top, bigScope: S.bigScope }));
   } catch { /* storage blocked in this frame -- preferences just won't stick */ }
 };
 

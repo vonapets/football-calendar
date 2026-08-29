@@ -20,6 +20,8 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from clubs import has_top_club, top_index
+
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 DATA.mkdir(exist_ok=True)
@@ -269,8 +271,10 @@ def main() -> None:
     RAW_DIR.mkdir(exist_ok=True)
     fixtures, per_comp, failures, warnings = [], {}, [], []
 
+    top_idx = top_index(cfg)
+
     for comp in cfg["competitions"]:
-        rows, ok = [], True
+        rows, ok, raw = [], True, 0
         for slug in comp["slugs"]:
             try:
                 body = fetch(slug, start, end)
@@ -288,10 +292,24 @@ def main() -> None:
 
             (RAW_DIR / f"{slug}.json").write_text(json.dumps(body, indent=1))
             is_qual = slug.endswith("_qual")
+            raw += len(events)
             rows.extend(n for n in (normalise(e, comp, is_qual) for e in events) if n)
 
-        # Never let one bad fetch erase a competition that had data yesterday.
+        # A `top_only` competition is carried purely for the clubs on the top-club
+        # list — we keep Bayern's Bundesliga games, not the other 300 fixtures.
+        # Everything already in the calendar (England, Spain, Europe) is unfiltered.
+        thinned = 0
+        if comp.get("top_only"):
+            kept = [r for r in rows if has_top_club(r, top_idx)]
+            thinned = len(rows) - len(kept)
+            rows = kept
+
+        # Never let one bad fetch erase a competition that had data yesterday --
+        # but an empty `top_only` comp whose feed did return events is not a
+        # failure, it is a round none of our clubs are in.
         held = prev_by_comp.get(comp["key"], [])
+        if not rows and raw and comp.get("top_only"):
+            held = []
         if not rows and held and not ok:
             rows = held
             warnings.append(f"{comp['key']}: fetch failed, kept yesterday's {len(held)} fixtures")
@@ -310,7 +328,10 @@ def main() -> None:
 
         fixtures.extend(deduped)
         per_comp[comp["key"]] = len(deduped)
-        note = "" if deduped else "  (not drawn yet)"
+        if deduped:
+            note = f"  (of {raw}, top clubs only)" if thinned else ""
+        else:
+            note = "  (no top-club games yet)" if comp.get("top_only") and raw else "  (not drawn yet)"
         print(f"  ok {comp['name']:<20} {len(deduped):>4} fixtures{note}")
 
     if not fixtures:

@@ -4,6 +4,7 @@
   "source": "ESPN public soccer feed (site.api.espn.com)",
   "window_start": "2026-07-01",
   "window_end": "2027-06-30",
+  "competitions_note": "`top_only: true` means only fixtures involving a club on the top_teams list are kept from that competition -- the foreign leagues and cups are carried for Bayern, PSG, Inter and the rest, not for their whole domestic season. England, Spain and the three European competitions have no flag and are pulled in full. ESPN has no feed for the Turkish Cup, so Galatasaray is Super Lig only.",
   "competitions": [
     {
       "key": "epl",
@@ -69,6 +70,167 @@
       "color": "#b08420",
       "slugs": [
         "esp.super_cup"
+      ]
+    },
+    {
+      "key": "bun",
+      "name": "Bundesliga",
+      "short": "BUN",
+      "group": "Germany",
+      "tier": "league",
+      "color": "#e2503c",
+      "top_only": true,
+      "slugs": [
+        "ger.1"
+      ]
+    },
+    {
+      "key": "dfb",
+      "name": "DFB-Pokal / Supercup",
+      "short": "DFB",
+      "group": "Germany",
+      "tier": "cup",
+      "color": "#a63324",
+      "top_only": true,
+      "slugs": [
+        "ger.dfb_pokal",
+        "ger.super_cup"
+      ]
+    },
+    {
+      "key": "seri",
+      "name": "Serie A",
+      "short": "SA",
+      "group": "Italy",
+      "tier": "league",
+      "color": "#2fb04a",
+      "top_only": true,
+      "slugs": [
+        "ita.1"
+      ]
+    },
+    {
+      "key": "copp",
+      "name": "Coppa Italia / Supercoppa",
+      "short": "COP",
+      "group": "Italy",
+      "tier": "cup",
+      "color": "#1d7030",
+      "top_only": true,
+      "slugs": [
+        "ita.coppa_italia",
+        "ita.super_cup"
+      ]
+    },
+    {
+      "key": "lig1",
+      "name": "Ligue 1",
+      "short": "L1",
+      "group": "France",
+      "tier": "league",
+      "color": "#6f5ae0",
+      "top_only": true,
+      "slugs": [
+        "fra.1"
+      ]
+    },
+    {
+      "key": "cdf",
+      "name": "Coupe de France / Trophee des Champions",
+      "short": "CDF",
+      "group": "France",
+      "tier": "cup",
+      "color": "#4936a8",
+      "top_only": true,
+      "slugs": [
+        "fra.coupe_de_france",
+        "fra.super_cup"
+      ]
+    },
+    {
+      "key": "ered",
+      "name": "Eredivisie",
+      "short": "ERE",
+      "group": "Netherlands",
+      "tier": "league",
+      "color": "#b845c4",
+      "top_only": true,
+      "slugs": [
+        "ned.1"
+      ]
+    },
+    {
+      "key": "knvb",
+      "name": "KNVB Beker / Johan Cruyff Shield",
+      "short": "KNVB",
+      "group": "Netherlands",
+      "tier": "cup",
+      "color": "#7c2d87",
+      "top_only": true,
+      "slugs": [
+        "ned.cup",
+        "ned.supercup"
+      ]
+    },
+    {
+      "key": "prim",
+      "name": "Primeira Liga",
+      "short": "PRI",
+      "group": "Portugal",
+      "tier": "league",
+      "color": "#189cc6",
+      "top_only": true,
+      "slugs": [
+        "por.1"
+      ]
+    },
+    {
+      "key": "taca",
+      "name": "Taca de Portugal",
+      "short": "TACA",
+      "group": "Portugal",
+      "tier": "cup",
+      "color": "#15678f",
+      "top_only": true,
+      "slugs": [
+        "por.taca.portugal"
+      ]
+    },
+    {
+      "key": "spl",
+      "name": "Scottish Premiership",
+      "short": "SPL",
+      "group": "Scotland",
+      "tier": "league",
+      "color": "#a5ae2b",
+      "top_only": true,
+      "slugs": [
+        "sco.1"
+      ]
+    },
+    {
+      "key": "scc",
+      "name": "Scottish Cup / League Cup",
+      "short": "SC",
+      "group": "Scotland",
+      "tier": "cup",
+      "color": "#757c1b",
+      "top_only": true,
+      "slugs": [
+        "sco.tennents",
+        "sco.cis"
+      ]
+    },
+    {
+      "key": "slig",
+      "name": "Super Lig",
+      "short": "SL",
+      "group": "Turkey",
+      "tier": "league",
+      "color": "#9a6b3f",
+      "top_only": true,
+      "slugs": [
+        "tur.1"
       ]
     },
     {
