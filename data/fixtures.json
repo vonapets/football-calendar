@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-29T10:26:11Z",
+ "generated_at": "2026-08-29T13:57:00Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -10336,8 +10336,8 @@
    "comp": "epl",
    "utc": "2026-08-29T11:30:00Z",
    "ts": 1788003000,
-   "status": "NS",
-   "status_long": "Not started",
+   "status": "2H",
+   "status_long": "Second half",
    "round": "",
    "home": "Liverpool",
    "away": "Nottingham Forest",
@@ -11016,6 +11016,24 @@
    "finished": false
   },
   {
+   "id": 401888304,
+   "comp": "slig",
+   "utc": "2026-09-04T17:00:00Z",
+   "ts": 1788541200,
+   "status": "NS",
+   "status_long": "Not started",
+   "round": "",
+   "home": "Istanbul Basaksehir",
+   "away": "Galatasaray",
+   "venue": "Basaksehir Fatih Terim Stadium",
+   "gh": null,
+   "ga": null,
+   "tbd": false,
+   "qual": false,
+   "disrupted": false,
+   "finished": false
+  },
+  {
    "id": 401879288,
    "comp": "epl",
    "utc": "2026-09-04T19:00:00Z",
@@ -11551,24 +11569,6 @@
    "gh": null,
    "ga": null,
    "tbd": false,
-   "qual": false,
-   "disrupted": false,
-   "finished": false
-  },
-  {
-   "id": 401888304,
-   "comp": "slig",
-   "utc": "2026-09-06T18:00:00Z",
-   "ts": 1788717600,
-   "status": "NS",
-   "status_long": "Not started",
-   "round": "",
-   "home": "Istanbul Basaksehir",
-   "away": "Galatasaray",
-   "venue": "Basaksehir Fatih Terim Stadium",
-   "gh": null,
-   "ga": null,
-   "tbd": true,
    "qual": false,
    "disrupted": false,
    "finished": false
@@ -35067,6 +35067,17 @@
    "away": "Sunderland",
    "from_utc": "2026-09-19T14:00:00Z",
    "to_utc": "2026-09-20T13:00:00Z",
+   "round": ""
+  },
+  {
+   "detected": "2026-08-29",
+   "kind": "moved",
+   "id": 401888304,
+   "comp": "slig",
+   "home": "Istanbul Basaksehir",
+   "away": "Galatasaray",
+   "from_utc": "2026-09-06T18:00:00Z",
+   "to_utc": "2026-09-04T17:00:00Z",
    "round": ""
   },
   {
