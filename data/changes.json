@@ -1,5 +1,60 @@
 [
  {
+  "detected": "2026-09-01",
+  "kind": "moved",
+  "id": 401879250,
+  "comp": "epl",
+  "home": "Aston Villa",
+  "away": "Fulham",
+  "from_utc": "2026-11-01T14:00:00Z",
+  "to_utc": "2026-10-31T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-01",
+  "kind": "moved",
+  "id": 401878765,
+  "comp": "epl",
+  "home": "Liverpool",
+  "away": "Brighton & Hove Albion",
+  "from_utc": "2026-10-24T14:00:00Z",
+  "to_utc": "2026-10-25T14:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-01",
+  "kind": "moved",
+  "id": 401879273,
+  "comp": "epl",
+  "home": "Leeds United",
+  "away": "Crystal Palace",
+  "from_utc": "2026-09-19T14:00:00Z",
+  "to_utc": "2026-09-20T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-01",
+  "kind": "moved",
+  "id": 401888291,
+  "comp": "slig",
+  "home": "Trabzonspor",
+  "away": "Galatasaray",
+  "from_utc": "2026-09-20T18:00:00Z",
+  "to_utc": "2026-09-19T17:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-01",
+  "kind": "moved",
+  "id": 401888293,
+  "comp": "slig",
+  "home": "Galatasaray",
+  "away": "Kocaelispor",
+  "from_utc": "2026-09-13T18:00:00Z",
+  "to_utc": "2026-09-13T17:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-08-31",
   "kind": "moved",
   "id": 401882858,
