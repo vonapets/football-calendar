@@ -2,6 +2,39 @@
  {
   "detected": "2026-09-04",
   "kind": "moved",
+  "id": 401878271,
+  "comp": "spl",
+  "home": "Celtic",
+  "away": "Falkirk",
+  "from_utc": "2027-01-30T15:00:00Z",
+  "to_utc": "2027-01-31T15:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401878273,
+  "comp": "spl",
+  "home": "St Mirren",
+  "away": "Celtic",
+  "from_utc": "2027-01-23T15:00:00Z",
+  "to_utc": "2027-01-24T15:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401878314,
+  "comp": "spl",
+  "home": "Celtic",
+  "away": "Hibernian",
+  "from_utc": "2026-12-12T15:00:00Z",
+  "to_utc": "2026-12-13T15:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
   "id": 401885386,
   "comp": "prim",
   "home": "Benfica",
@@ -24,6 +57,39 @@
  {
   "detected": "2026-09-04",
   "kind": "moved",
+  "id": 401878330,
+  "comp": "spl",
+  "home": "Heart of Midlothian",
+  "away": "Celtic",
+  "from_utc": "2026-11-28T15:00:00Z",
+  "to_utc": "2026-11-29T15:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401876393,
+  "comp": "lig1",
+  "home": "AJ Auxerre",
+  "away": "Marseille",
+  "from_utc": "2026-11-28T20:00:00Z",
+  "to_utc": "2026-11-29T14:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401876387,
+  "comp": "lig1",
+  "home": "Paris Saint-Germain",
+  "away": "Lorient",
+  "from_utc": "2026-11-28T20:00:00Z",
+  "to_utc": "2026-11-28T19:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
   "id": 401875008,
   "comp": "seri",
   "home": "Juventus",
@@ -40,6 +106,17 @@
   "home": "Atalanta",
   "away": "Internazionale",
   "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-22T19:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401876400,
+  "comp": "lig1",
+  "home": "Marseille",
+  "away": "Le Mans",
+  "from_utc": "2026-11-21T20:00:00Z",
   "to_utc": "2026-11-22T19:45:00Z",
   "round": ""
  },
@@ -79,6 +156,17 @@
  {
   "detected": "2026-09-04",
   "kind": "moved",
+  "id": 401876398,
+  "comp": "lig1",
+  "home": "Nice",
+  "away": "Paris Saint-Germain",
+  "from_utc": "2026-11-21T20:00:00Z",
+  "to_utc": "2026-11-21T16:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
   "id": 401885401,
   "comp": "prim",
   "home": "Estrela",
@@ -95,6 +183,17 @@
   "home": "Fiorentina",
   "away": "Juventus",
   "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-08T19:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401876404,
+  "comp": "lig1",
+  "home": "Lens",
+  "away": "Marseille",
+  "from_utc": "2026-11-07T19:45:00Z",
   "to_utc": "2026-11-08T19:45:00Z",
   "round": ""
  },
@@ -118,6 +217,17 @@
   "away": "Como",
   "from_utc": "2026-11-08T20:00:00Z",
   "to_utc": "2026-11-08T17:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401878343,
+  "comp": "spl",
+  "home": "Celtic",
+  "away": "Kilmarnock",
+  "from_utc": "2026-11-07T15:00:00Z",
+  "to_utc": "2026-11-08T16:00:00Z",
   "round": ""
  },
  {
@@ -172,6 +282,17 @@
   "home": "AS Roma",
   "away": "Sassuolo",
   "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-07T19:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401876407,
+  "comp": "lig1",
+  "home": "Paris Saint-Germain",
+  "away": "Troyes",
+  "from_utc": "2026-11-07T20:00:00Z",
   "to_utc": "2026-11-07T19:45:00Z",
   "round": ""
  },
@@ -376,6 +497,17 @@
  {
   "detected": "2026-09-04",
   "kind": "moved",
+  "id": 401878360,
+  "comp": "spl",
+  "home": "Hibernian",
+  "away": "Celtic",
+  "from_utc": "2026-10-24T14:00:00Z",
+  "to_utc": "2026-10-25T12:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
   "id": 401875036,
   "comp": "seri",
   "home": "Internazionale",
@@ -426,6 +558,17 @@
   "away": "Atalanta",
   "from_utc": "2026-10-17T18:00:00Z",
   "to_utc": "2026-10-18T16:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401878367,
+  "comp": "spl",
+  "home": "Celtic",
+  "away": "Heart of Midlothian",
+  "from_utc": "2026-10-17T14:00:00Z",
+  "to_utc": "2026-10-18T14:00:00Z",
   "round": ""
  },
  {
@@ -503,6 +646,17 @@
   "away": "AC Milan",
   "from_utc": "2026-10-11T18:00:00Z",
   "to_utc": "2026-10-11T16:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-04",
+  "kind": "moved",
+  "id": 401878370,
+  "comp": "spl",
+  "home": "Motherwell",
+  "away": "Celtic",
+  "from_utc": "2026-10-10T14:00:00Z",
+  "to_utc": "2026-10-11T11:00:00Z",
   "round": ""
  },
  {
