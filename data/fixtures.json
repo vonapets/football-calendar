@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-05T07:03:18Z",
+ "generated_at": "2026-09-05T11:56:06Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -11110,8 +11110,8 @@
    "comp": "epl",
    "utc": "2026-09-05T11:30:00Z",
    "ts": 1788607800,
-   "status": "NS",
-   "status_long": "Not started",
+   "status": "LIVE",
+   "status_long": "In progress",
    "round": "",
    "home": "Newcastle United",
    "away": "AFC Bournemouth",
