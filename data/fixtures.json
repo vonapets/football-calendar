@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-07T14:22:43Z",
+ "generated_at": "2026-09-07T18:48:27Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -11632,8 +11632,8 @@
    "comp": "liga",
    "utc": "2026-09-07T17:00:00Z",
    "ts": 1788800400,
-   "status": "NS",
-   "status_long": "Not started",
+   "status": "2H",
+   "status_long": "Second half",
    "round": "",
    "home": "Getafe",
    "away": "Celta Vigo",
