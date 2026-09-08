@@ -1,5 +1,115 @@
 [
  {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875528,
+  "comp": "ered",
+  "home": "Ajax Amsterdam",
+  "away": "FC Utrecht",
+  "from_utc": "2026-12-05T20:00:00Z",
+  "to_utc": "2026-12-06T13:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875527,
+  "comp": "ered",
+  "home": "AZ Alkmaar",
+  "away": "PSV Eindhoven",
+  "from_utc": "2026-12-05T20:00:00Z",
+  "to_utc": "2026-12-05T19:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875521,
+  "comp": "ered",
+  "home": "Willem II",
+  "away": "Feyenoord Rotterdam",
+  "from_utc": "2026-12-05T20:00:00Z",
+  "to_utc": "2026-12-05T15:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875535,
+  "comp": "ered",
+  "home": "Feyenoord Rotterdam",
+  "away": "Ajax Amsterdam",
+  "from_utc": "2026-11-28T20:00:00Z",
+  "to_utc": "2026-11-29T13:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875531,
+  "comp": "ered",
+  "home": "PSV Eindhoven",
+  "away": "Go Ahead Eagles",
+  "from_utc": "2026-11-28T20:00:00Z",
+  "to_utc": "2026-11-28T17:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875547,
+  "comp": "ered",
+  "home": "Ajax Amsterdam",
+  "away": "ADO Den Haag",
+  "from_utc": "2026-11-21T20:00:00Z",
+  "to_utc": "2026-11-22T13:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875543,
+  "comp": "ered",
+  "home": "Feyenoord Rotterdam",
+  "away": "Excelsior",
+  "from_utc": "2026-11-21T20:00:00Z",
+  "to_utc": "2026-11-21T17:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875541,
+  "comp": "ered",
+  "home": "NEC Nijmegen",
+  "away": "PSV Eindhoven",
+  "from_utc": "2026-11-21T20:00:00Z",
+  "to_utc": "2026-11-21T15:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875553,
+  "comp": "ered",
+  "home": "SC Cambuur",
+  "away": "PSV Eindhoven",
+  "from_utc": "2026-11-07T19:00:00Z",
+  "to_utc": "2026-11-08T15:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-08",
+  "kind": "moved",
+  "id": 401875592,
+  "comp": "ered",
+  "home": "PSV Eindhoven",
+  "away": "Heerenveen",
+  "from_utc": "2026-10-10T14:30:00Z",
+  "to_utc": "2026-10-09T18:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-09-04",
   "kind": "moved",
   "id": 401878271,
