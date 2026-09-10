@@ -1,5 +1,27 @@
 [
  {
+  "detected": "2026-09-10",
+  "kind": "moved",
+  "id": 401914284,
+  "comp": "efl",
+  "home": "Peterborough United",
+  "away": "Barnsley",
+  "from_utc": "2026-09-15T18:45:00Z",
+  "to_utc": "2026-09-15T18:30:00Z",
+  "round": "Third Round"
+ },
+ {
+  "detected": "2026-09-10",
+  "kind": "moved",
+  "id": 401914256,
+  "comp": "efl",
+  "home": "Chelsea",
+  "away": "Leeds United",
+  "from_utc": "2026-09-09T19:00:00Z",
+  "to_utc": "2026-09-09T19:15:00Z",
+  "round": "Third Round"
+ },
+ {
   "detected": "2026-09-08",
   "kind": "moved",
   "id": 401875665,
