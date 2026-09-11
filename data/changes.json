@@ -1,5 +1,49 @@
 [
  {
+  "detected": "2026-09-11",
+  "kind": "moved",
+  "id": 401917033,
+  "comp": "dfb",
+  "home": "Bayer Leverkusen",
+  "away": "1. FC N\u00fcrnberg",
+  "from_utc": "2026-10-27T18:00:00Z",
+  "to_utc": "2026-10-28T19:45:00Z",
+  "round": "Second Round"
+ },
+ {
+  "detected": "2026-09-11",
+  "kind": "moved",
+  "id": 401917035,
+  "comp": "dfb",
+  "home": "Bayern Munich",
+  "away": "1. FC Magdeburg",
+  "from_utc": "2026-10-27T18:00:00Z",
+  "to_utc": "2026-10-28T19:45:00Z",
+  "round": "Second Round"
+ },
+ {
+  "detected": "2026-09-11",
+  "kind": "moved",
+  "id": 401917030,
+  "comp": "dfb",
+  "home": "Borussia Dortmund",
+  "away": "Werder Bremen",
+  "from_utc": "2026-10-27T18:00:00Z",
+  "to_utc": "2026-10-27T19:45:00Z",
+  "round": "Second Round"
+ },
+ {
+  "detected": "2026-09-11",
+  "kind": "moved",
+  "id": 401917027,
+  "comp": "dfb",
+  "home": "Rot-Weiss Essen",
+  "away": "RB Leipzig",
+  "from_utc": "2026-10-27T18:00:00Z",
+  "to_utc": "2026-10-27T17:00:00Z",
+  "round": "Second Round"
+ },
+ {
   "detected": "2026-09-10",
   "kind": "moved",
   "id": 401879170,
