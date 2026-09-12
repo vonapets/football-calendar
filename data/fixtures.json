@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-12T07:17:15Z",
+ "generated_at": "2026-09-12T12:18:12Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -12172,8 +12172,8 @@
    "comp": "liga",
    "utc": "2026-09-12T12:00:00Z",
    "ts": 1789214400,
-   "status": "NS",
-   "status_long": "Not started",
+   "status": "1H",
+   "status_long": "First half",
    "round": "",
    "home": "Racing Santander",
    "away": "Alav\u00e9s",
