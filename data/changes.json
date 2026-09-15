@@ -1,5 +1,115 @@
 [
  {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888216,
+  "comp": "slig",
+  "home": "Galatasaray",
+  "away": "Alanyaspor",
+  "from_utc": "2026-12-20T20:00:00Z",
+  "to_utc": "2026-12-19T16:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888227,
+  "comp": "slig",
+  "home": "Eyupspor",
+  "away": "Galatasaray",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-12T16:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888231,
+  "comp": "slig",
+  "home": "Galatasaray",
+  "away": "Caykur Rizespor",
+  "from_utc": "2026-12-06T20:00:00Z",
+  "to_utc": "2026-12-04T17:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888237,
+  "comp": "slig",
+  "home": "Besiktas",
+  "away": "Galatasaray",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-30T18:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888245,
+  "comp": "slig",
+  "home": "Galatasaray",
+  "away": "Samsunspor",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-21T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888371,
+  "comp": "slig",
+  "home": "Galatasaray",
+  "away": "Amed SFK",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-07T16:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888259,
+  "comp": "slig",
+  "home": "Konyaspor",
+  "away": "Galatasaray",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-10-30T17:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888265,
+  "comp": "slig",
+  "home": "Galatasaray",
+  "away": "Fenerbahce",
+  "from_utc": "2026-10-25T18:00:00Z",
+  "to_utc": "2026-10-26T18:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888274,
+  "comp": "slig",
+  "home": "Genclerbirligi",
+  "away": "Galatasaray",
+  "from_utc": "2026-10-18T18:00:00Z",
+  "to_utc": "2026-10-17T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-09-15",
+  "kind": "moved",
+  "id": 401888280,
+  "comp": "slig",
+  "home": "Galatasaray",
+  "away": "Kasimpasa",
+  "from_utc": "2026-10-11T18:00:00Z",
+  "to_utc": "2026-10-09T17:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-09-11",
   "kind": "moved",
   "id": 401917033,
