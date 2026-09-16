@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-15T18:23:11Z",
+ "generated_at": "2026-09-16T00:53:02Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -45336,14 +45336,84 @@
  },
  "failures": [
   {
+   "comp": "epl",
+   "slug": "eng.1",
+   "error": "eng.1: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "fac",
+   "slug": "eng.fa",
+   "error": "eng.fa: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "efl",
+   "slug": "eng.league_cup",
+   "error": "eng.league_cup: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "liga",
+   "slug": "esp.1",
+   "error": "esp.1: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "cdr",
+   "slug": "esp.copa_del_rey",
+   "error": "esp.copa_del_rey: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "sce",
+   "slug": "esp.super_cup",
+   "error": "esp.super_cup: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "bun",
+   "slug": "ger.1",
+   "error": "ger.1: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "dfb",
+   "slug": "ger.dfb_pokal",
+   "error": "ger.dfb_pokal: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "dfb",
+   "slug": "ger.super_cup",
+   "error": "ger.super_cup: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "seri",
+   "slug": "ita.1",
+   "error": "ita.1: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "copp",
+   "slug": "ita.coppa_italia",
+   "error": "ita.coppa_italia: HTTP Error 400: Bad Request"
+  },
+  {
    "comp": "copp",
    "slug": "ita.super_cup",
    "error": "ita.super_cup: HTTP Error 400: Bad Request"
   },
   {
+   "comp": "lig1",
+   "slug": "fra.1",
+   "error": "fra.1: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "cdf",
+   "slug": "fra.coupe_de_france",
+   "error": "fra.coupe_de_france: HTTP Error 400: Bad Request"
+  },
+  {
    "comp": "cdf",
    "slug": "fra.super_cup",
    "error": "fra.super_cup: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "ered",
+   "slug": "ned.1",
+   "error": "ned.1: HTTP Error 400: Bad Request"
   },
   {
    "comp": "knvb",
@@ -45354,6 +45424,16 @@
    "comp": "knvb",
    "slug": "ned.supercup",
    "error": "ned.supercup: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "prim",
+   "slug": "por.1",
+   "error": "por.1: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "taca",
+   "slug": "por.taca.portugal",
+   "error": "por.taca.portugal: HTTP Error 400: Bad Request"
   },
   {
    "comp": "spl",
@@ -45369,12 +45449,64 @@
    "comp": "scc",
    "slug": "sco.cis",
    "error": "sco.cis: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "slig",
+   "slug": "tur.1",
+   "error": "tur.1: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "ucl",
+   "slug": "uefa.champions",
+   "error": "uefa.champions: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "ucl",
+   "slug": "uefa.champions_qual",
+   "error": "uefa.champions_qual: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "uel",
+   "slug": "uefa.europa",
+   "error": "uefa.europa: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "uel",
+   "slug": "uefa.europa_qual",
+   "error": "uefa.europa_qual: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "uecl",
+   "slug": "uefa.europa.conf",
+   "error": "uefa.europa.conf: HTTP Error 400: Bad Request"
+  },
+  {
+   "comp": "uecl",
+   "slug": "uefa.europa.conf_qual",
+   "error": "uefa.europa.conf_qual: HTTP Error 400: Bad Request"
   }
  ],
  "warnings": [
+  "epl: fetch failed, kept yesterday's 380 fixtures",
+  "efl: fetch failed, kept yesterday's 76 fixtures",
+  "liga: fetch failed, kept yesterday's 380 fixtures",
+  "cdr: fetch failed, kept yesterday's 20 fixtures",
+  "sce: fetch failed, kept yesterday's 2 fixtures",
+  "bun: fetch failed, kept yesterday's 124 fixtures",
+  "dfb: fetch failed, kept yesterday's 9 fixtures",
+  "seri: fetch failed, kept yesterday's 198 fixtures",
+  "copp: fetch failed, kept yesterday's 6 fixtures",
+  "lig1: fetch failed, kept yesterday's 66 fixtures",
   "cdf: fetch failed, kept yesterday's 1 fixtures",
+  "ered: fetch failed, kept yesterday's 96 fixtures",
   "knvb: fetch failed, kept yesterday's 1 fixtures",
+  "prim: fetch failed, kept yesterday's 96 fixtures",
+  "taca: fetch failed, kept yesterday's 2 fixtures",
   "spl: fetch failed, kept yesterday's 33 fixtures",
-  "scc: fetch failed, kept yesterday's 2 fixtures"
+  "scc: fetch failed, kept yesterday's 2 fixtures",
+  "slig: fetch failed, kept yesterday's 34 fixtures",
+  "ucl: fetch failed, kept yesterday's 234 fixtures",
+  "uel: fetch failed, kept yesterday's 224 fixtures",
+  "uecl: fetch failed, kept yesterday's 366 fixtures"
  ]
 }
