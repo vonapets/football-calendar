@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T11:20:48Z",
+ "generated_at": "2026-09-29T11:34:41Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -7,6 +7,7 @@
   {
    "key": "epl",
    "name": "Premier League",
+   "short": "EPL",
    "group": "England",
    "tier": "league",
    "color": "#8244c9",
@@ -17,6 +18,7 @@
   {
    "key": "fac",
    "name": "FA Cup",
+   "short": "FA",
    "group": "England",
    "tier": "cup",
    "color": "#0d8b8b",
@@ -27,6 +29,7 @@
   {
    "key": "efl",
    "name": "EFL Cup",
+   "short": "EFL",
    "group": "England",
    "tier": "cup",
    "color": "#4a90d9",
@@ -37,6 +40,7 @@
   {
    "key": "liga",
    "name": "La Liga",
+   "short": "LIG",
    "group": "Spain",
    "tier": "league",
    "color": "#d92d3e",
@@ -47,6 +51,7 @@
   {
    "key": "cdr",
    "name": "Copa del Rey",
+   "short": "CDR",
    "group": "Spain",
    "tier": "cup",
    "color": "#e0518a",
@@ -56,7 +61,8 @@
   },
   {
    "key": "sce",
-   "name": "Supercopa de Espa\u00f1a",
+   "name": "Supercopa de Espana",
+   "short": "SUP",
    "group": "Spain",
    "tier": "cup",
    "color": "#b08420",
@@ -67,6 +73,7 @@
   {
    "key": "bun",
    "name": "Bundesliga",
+   "short": "BUN",
    "group": "Germany",
    "tier": "league",
    "color": "#e2503c",
@@ -78,6 +85,7 @@
   {
    "key": "dfb",
    "name": "DFB-Pokal / Supercup",
+   "short": "DFB",
    "group": "Germany",
    "tier": "cup",
    "color": "#a63324",
@@ -90,6 +98,7 @@
   {
    "key": "seri",
    "name": "Serie A",
+   "short": "SA",
    "group": "Italy",
    "tier": "league",
    "color": "#2fb04a",
@@ -101,6 +110,7 @@
   {
    "key": "copp",
    "name": "Coppa Italia / Supercoppa",
+   "short": "COP",
    "group": "Italy",
    "tier": "cup",
    "color": "#1d7030",
@@ -113,6 +123,7 @@
   {
    "key": "lig1",
    "name": "Ligue 1",
+   "short": "L1",
    "group": "France",
    "tier": "league",
    "color": "#6f5ae0",
@@ -123,7 +134,8 @@
   },
   {
    "key": "cdf",
-   "name": "Coupe de France / Troph\u00e9e des Champions",
+   "name": "Coupe de France / Trophee des Champions",
+   "short": "CDF",
    "group": "France",
    "tier": "cup",
    "color": "#4936a8",
@@ -136,6 +148,7 @@
   {
    "key": "ered",
    "name": "Eredivisie",
+   "short": "ERE",
    "group": "Netherlands",
    "tier": "league",
    "color": "#b845c4",
@@ -147,6 +160,7 @@
   {
    "key": "knvb",
    "name": "KNVB Beker / Johan Cruyff Shield",
+   "short": "KNVB",
    "group": "Netherlands",
    "tier": "cup",
    "color": "#7c2d87",
@@ -159,6 +173,7 @@
   {
    "key": "prim",
    "name": "Primeira Liga",
+   "short": "PRI",
    "group": "Portugal",
    "tier": "league",
    "color": "#189cc6",
@@ -169,7 +184,8 @@
   },
   {
    "key": "taca",
-   "name": "Ta\u00e7a de Portugal",
+   "name": "Taca de Portugal",
+   "short": "TACA",
    "group": "Portugal",
    "tier": "cup",
    "color": "#15678f",
@@ -181,6 +197,7 @@
   {
    "key": "spl",
    "name": "Scottish Premiership",
+   "short": "SPL",
    "group": "Scotland",
    "tier": "league",
    "color": "#a5ae2b",
@@ -192,6 +209,7 @@
   {
    "key": "scc",
    "name": "Scottish Cup / League Cup",
+   "short": "SC",
    "group": "Scotland",
    "tier": "cup",
    "color": "#757c1b",
@@ -203,7 +221,8 @@
   },
   {
    "key": "slig",
-   "name": "S\u00fcper Lig",
+   "name": "Super Lig",
+   "short": "SL",
    "group": "Turkey",
    "tier": "league",
    "color": "#9a6b3f",
@@ -215,6 +234,7 @@
   {
    "key": "ucl",
    "name": "Champions League",
+   "short": "UCL",
    "group": "Europe",
    "tier": "euro",
    "color": "#2b3fb8",
@@ -226,6 +246,7 @@
   {
    "key": "uel",
    "name": "Europa League",
+   "short": "UEL",
    "group": "Europe",
    "tier": "euro",
    "color": "#f07817",
@@ -237,6 +258,7 @@
   {
    "key": "uecl",
    "name": "Conference League",
+   "short": "UECL",
    "group": "Europe",
    "tier": "euro",
    "color": "#5aa829",
@@ -42695,7 +42717,7 @@
  "breaks": [
   {
    "label": "International break \u2014 September/October",
-   "short": "International break",
+   "short": "INT'L",
    "kind": "international",
    "start": "2026-09-21",
    "end": "2026-10-06",
@@ -42704,7 +42726,7 @@
   },
   {
    "label": "International break \u2014 November",
-   "short": "International break",
+   "short": "INT'L",
    "kind": "international",
    "start": "2026-11-09",
    "end": "2026-11-17",
@@ -42713,7 +42735,7 @@
   },
   {
    "label": "International break \u2014 March",
-   "short": "International break",
+   "short": "INT'L",
    "kind": "international",
    "start": "2027-03-22",
    "end": "2027-03-30",
@@ -42722,7 +42744,7 @@
   },
   {
    "label": "International break \u2014 June",
-   "short": "International break",
+   "short": "INT'L",
    "kind": "international",
    "start": "2027-06-07",
    "end": "2027-06-15",
@@ -42731,7 +42753,7 @@
   },
   {
    "label": "La Liga winter break",
-   "short": "Winter break",
+   "short": "WINTER",
    "kind": "winter",
    "start": "2026-12-22",
    "end": "2027-01-02",
@@ -42739,8 +42761,8 @@
    "notes": "No Spanish league football. Standing LaLiga-AFE agreement. The Premier League has NO equivalent break and plays right through \u2014 only a rule guaranteeing 60 hours between rounds."
   },
   {
-   "label": "Supercopa de Espa\u00f1a \u2014 Istanbul",
-   "short": "Supercopa de Espa\u00f1a",
+   "label": "Supercopa de Espana \u2014 Istanbul",
+   "short": "SUPERCOPA",
    "kind": "cup",
    "start": "2027-02-02",
    "end": "2027-02-07",
@@ -42749,7 +42771,7 @@
   },
   {
    "label": "Premier League January gap (FA Cup third round)",
-   "short": "FA Cup third round",
+   "short": "FA CUP R3",
    "kind": "gap",
    "start": "2027-01-06",
    "end": "2027-01-16",
