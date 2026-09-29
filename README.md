@@ -52,7 +52,7 @@ There is also a **Run workflow** button on the Actions tab.
 ## Where the data comes from
 
 ESPN's public soccer feed (`site.api.espn.com`) — the same JSON endpoint espn.com
-loads its own scoreboards from. No key, no signup, one request per competition.
+loads its own scoreboards from. No key, no signup, one request per competition per month.
 
 **Be aware:** this is an undocumented endpoint. ESPN never published it as an API
 and does not promise to keep it stable, so at some point it may change shape and
@@ -60,6 +60,14 @@ need an hour of repair. Because of that, `sync.py` is deliberately defensive —
 a fetch fails or comes back empty, it keeps yesterday's fixtures rather than
 wiping the calendar. It is also why the shared page is best kept private rather
 than circulated widely.
+
+**It already changed once.** On 15 Sep 2026 ESPN stopped accepting a date *range*
+(`?dates=20260701-20270630` now answers HTTP 400), and for two weeks every run kept
+the previous fixtures behind a green tick. `sync.py` now asks for one calendar
+month at a time (`?dates=202609`), which still works and was checked to return
+exactly the same matches. It also fails the run outright when more than half the
+feeds fail, so the next break shows up as a red X and an email instead of a
+quietly stale page.
 
 If it ever breaks for good, the paid alternative is API-Football Pro ($19/month),
 which serves all 22 competitions from one documented API.

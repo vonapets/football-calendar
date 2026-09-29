@@ -61,11 +61,23 @@ DISRUPTED = {"PST", "CANC", "SUSP", "ABD", "WO"}
 # pull comes back at exactly this size the data is suspect, not complete.
 TRUNCATION_TRIPWIRE = 100
 PAGE_LIMIT = 1000
+PACE = 0.4          # seconds between requests; ESPN's Akamai edge bans IPs that sweep
 
 
-def fetch(slug: str, start: str, end: str, retries: int = 3) -> dict:
-    """GET one competition's fixtures for a date window. Raises on give-up."""
-    url = f"{BASE.format(slug=slug)}?dates={start}-{end}&limit={PAGE_LIMIT}"
+def months(start: str, end: str) -> list:
+    """'YYYYMM' for every calendar month the YYYYMMDD window touches."""
+    y, m = int(start[:4]), int(start[4:6])
+    last = (int(end[:4]), int(end[4:6]))
+    out = []
+    while (y, m) <= last:
+        out.append(f"{y}{m:02d}")
+        y, m = (y + 1, 1) if m == 12 else (y, m + 1)
+    return out
+
+
+def fetch_month(slug: str, ym: str, retries: int = 3) -> dict:
+    """GET one competition's fixtures for one calendar month. Raises on give-up."""
+    url = f"{BASE.format(slug=slug)}?dates={ym}&limit={PAGE_LIMIT}"
     last = None
     for attempt in range(retries):
         try:
@@ -78,7 +90,35 @@ def fetch(slug: str, start: str, end: str, retries: int = 3) -> dict:
             last = exc
             if attempt < retries - 1:
                 time.sleep(2 * (attempt + 1))
-    raise RuntimeError(f"{slug}: {last}")
+    raise RuntimeError(f"{slug} {ym}: {last}")
+
+
+def fetch(slug: str, start: str, end: str) -> dict:
+    """One competition's fixtures across the window, one calendar month per request.
+
+    ESPN stopped accepting a `?dates=START-END` range on 15 Sep 2026 -- every
+    range now answers HTTP 400 "Failed to get events endpoint" -- while
+    `?dates=YYYYMM` still works. Month windows were checked to be lossless:
+    Brasileiro Serie A 2026 as twelve monthly pulls is the same 383 events as the
+    whole-year pull, none filed under two months.
+
+    A month that fails after its retries fails the whole competition, so main()
+    falls back to yesterday's fixtures rather than publishing a season with a
+    hole in it.
+    """
+    events, seen, suspect, leagues = [], set(), [], None
+    for ym in months(start, end):
+        body = fetch_month(slug, ym)
+        leagues = leagues or body.get("leagues")
+        batch = body.get("events") or []
+        if len(batch) >= PAGE_LIMIT or len(batch) == TRUNCATION_TRIPWIRE:
+            suspect.append(f"{ym}={len(batch)}")
+        for e in batch:
+            if e.get("id") not in seen:
+                seen.add(e.get("id"))
+                events.append(e)
+        time.sleep(PACE)
+    return {"leagues": leagues, "events": events, "suspect_months": suspect}
 
 
 def title_round(slug: str, comp_tier: str) -> str:
@@ -285,10 +325,9 @@ def main() -> None:
                 continue
 
             events = body.get("events") or []
-            if len(events) >= PAGE_LIMIT:
-                warnings.append(f"{comp['key']}/{slug} returned {len(events)} events — at the page limit, may be truncated")
-            elif len(events) == TRUNCATION_TRIPWIRE:
-                warnings.append(f"{comp['key']}/{slug} returned exactly {TRUNCATION_TRIPWIRE} events — possible silent truncation")
+            if body.get("suspect_months"):
+                warnings.append(f"{comp['key']}/{slug} month(s) at a truncation size, may be incomplete: "
+                                + ", ".join(body["suspect_months"]))
 
             (RAW_DIR / f"{slug}.json").write_text(json.dumps(body, indent=1))
             is_qual = slug.endswith("_qual")
@@ -378,6 +417,14 @@ def main() -> None:
         print(f"  warning: {w}")
     if failures:
         print(f"  {len(failures)} feed(s) failed — see data/fixtures.json -> failures")
+
+    # Holding yesterday's fixtures keeps the page up through a bad fetch, but it
+    # also let every feed 400 from 15 to 29 Sep 2026 behind a green tick. When most
+    # feeds fail, fail the run: the page keeps its last deploy and GitHub emails.
+    n_slugs = sum(len(c["slugs"]) for c in cfg["competitions"])
+    if len(failures) * 2 > n_slugs:
+        sys.exit(f"\n{len(failures)} of {n_slugs} feeds failed — ESPN's feed may have changed. "
+                 "Failing the run so it shows up; the published page is left as it was.")
 
 
 if __name__ == "__main__":
