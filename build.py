@@ -193,6 +193,9 @@ def main() -> None:
         detected = [b for b in payload.get("breaks", []) if b.get("source") == "detected"]
         payload["breaks"] = list(cfg.get("breaks") or []) + detected
 
+    # the page hides matches older than this many weeks (see SHOW_FROM in template.html)
+    payload["history_weeks"] = int(cfg.get("history_weeks", 1))
+
     stats = annotate_top(payload, cfg)
     print(f"Top clubs: {stats['big']} big matches (both clubs listed), "
           f"{stats['one']} with one listed club.")

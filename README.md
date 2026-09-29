@@ -147,6 +147,14 @@ yours (`Internazionale`, `Ajax Amsterdam`, `Feyenoord Rotterdam`).
 
 ## Things worth knowing
 
+- **Only last week onwards is shown.** Matches before Monday of last week — in the
+  viewer's own time zone, recalculated every time the page opens — are hidden, along
+  with breaks that have ended and reschedules of hidden matches. To show more, raise
+  `history_weeks` in `config.json` (2 = from Monday two weeks ago) and run
+  `python3 build.py`. The whole season is still in `data/fixtures.json`: a match
+  missing from the page before that date is hidden, not lost.
+- **Team search ignores accents and case** — "gremio" finds Grêmio, "atletico" finds
+  Atlético.
 - **The undrawn competitions are empty right now** — the FA Cup, Copa del Rey and
   the three UEFA league phases. No source anywhere has those fixtures. They fill
   in automatically as the draws happen (UEFA late August, FA Cup and Copa del Rey

@@ -4,6 +4,8 @@
   "source": "ESPN public soccer feed (site.api.espn.com)",
   "window_start": "2026-07-01",
   "window_end": "2027-06-30",
+  "history_weeks": 1,
+  "history_weeks_note": "How far back the page shows matches: everything from Monday of this many weeks ago (viewer's local time). 1 = last week onwards. data/fixtures.json keeps the whole season either way.",
   "competitions_note": "`top_only: true` means only fixtures involving a club on the top_teams list are kept from that competition -- the foreign leagues and cups are carried for Bayern, PSG, Inter and the rest, not for their whole domestic season. England, Spain and the three European competitions have no flag and are pulled in full. ESPN has no feed for the Turkish Cup, so Galatasaray is Super Lig only.",
   "competitions": [
     {
