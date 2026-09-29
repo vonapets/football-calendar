@@ -287,7 +287,7 @@ def detect_gaps(fixtures: list, cfg: dict) -> list:
                 "end": g_end,
                 "days": (d1 - d0).days - 1,
                 "source": "detected", "kind": "gap",
-                "label": "No league football", "short": "NO LEAGUE",
+                "label": "No league football", "short": "No league football",
             })
     return gaps
 
