@@ -192,11 +192,6 @@ def main() -> None:
         # curated breaks live in config.json and are re-applied on every build
         detected = [b for b in payload.get("breaks", []) if b.get("source") == "detected"]
         payload["breaks"] = list(cfg.get("breaks") or []) + detected
-        # so are competition names and colours: an edit shows on the next build,
-        # without waiting for a sync to copy config.json into the snapshot
-        payload["competitions"] = cfg["competitions"]
-        keys = {c["key"] for c in cfg["competitions"]}
-        payload["fixtures"] = [f for f in payload["fixtures"] if f["comp"] in keys]
 
     # the page hides matches older than this many weeks (see SHOW_FROM in template.html)
     payload["history_weeks"] = int(cfg.get("history_weeks", 1))

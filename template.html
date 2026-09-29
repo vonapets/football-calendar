@@ -271,7 +271,7 @@ button.dnum:hover .dmon{color:var(--ink-2)}
 .wfx:hover{background:var(--sunk)}
 .wfx .top{display:flex;align-items:baseline;gap:.35rem}
 .wfx .t{font-family:var(--f-mono);font-size:.68rem;font-weight:600;color:var(--ink)}
-.wfx .cmp{font-family:var(--f-mono);font-size:.56rem;font-weight:600;color:var(--c);letter-spacing:.04em;margin-left:auto;text-align:right;min-width:0;line-height:1.25}
+.wfx .cmp{font-family:var(--f-mono);font-size:.56rem;font-weight:600;color:var(--c);letter-spacing:.06em;margin-left:auto}
 .wfx .team{font-size:.78rem;line-height:1.25;font-weight:500}
 .wfx .team{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .wfx .meta{font-family:var(--f-mono);font-size:.58rem;color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -290,15 +290,15 @@ button.dnum:hover .dmon{color:var(--ink-2)}
 .lhead .ls{font-family:var(--f-mono);font-size:.62rem;color:var(--ink-3);letter-spacing:.04em}
 .lhead .lb{font-family:var(--f-mono);font-size:.6rem;color:var(--break);font-weight:600;margin-left:auto}
 .lrow{
-  display:grid;grid-template-columns:5.5rem 10.5rem 1fr auto;gap:.6rem;align-items:baseline;
+  display:grid;grid-template-columns:5.5rem 3.4rem 1fr auto;gap:.6rem;align-items:baseline;
   padding:.3rem .7rem;border-bottom:1px solid var(--rule);border-left:3px solid var(--c);
   text-align:left;width:100%;
 }
 .lrow:last-child{border-bottom:none}
-.list[data-group="comp"] .lrow{grid-template-columns:9.5rem 10.5rem 1fr auto}
+.list[data-group="comp"] .lrow{grid-template-columns:9.5rem 3.4rem 1fr auto}
 .lrow:hover{background:var(--sunk)}
 .lrow .when{font-family:var(--f-mono);font-size:.68rem;color:var(--ink-2)}
-.lrow .cmp{font-family:var(--f-mono);font-size:.6rem;font-weight:600;color:var(--c);letter-spacing:.03em;line-height:1.25}
+.lrow .cmp{font-family:var(--f-mono);font-size:.6rem;font-weight:600;color:var(--c);letter-spacing:.05em}
 .lrow .match{font-size:.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lrow .match .vs{color:var(--ink-3);font-size:.7rem;padding:0 .15rem}
 .lrow .rt{font-family:var(--f-mono);font-size:.62rem;color:var(--ink-3);text-align:right}
@@ -355,8 +355,8 @@ button.dnum:hover .dmon{color:var(--ink-2)}
 .bteams{font-family:var(--f-display);font-size:.92rem;font-weight:600;line-height:1.24;letter-spacing:-.01em;text-wrap:balance}
 .bteams .vs{font-style:normal;font-family:var(--f-body);font-weight:400;color:var(--ink-3);font-size:.72rem;padding:0 .2rem}
 .bteams .sc{font-family:var(--f-mono);font-size:.78rem;font-weight:600;color:var(--ink-2)}
-.bfoot{display:flex;flex-wrap:wrap;align-items:baseline;gap:.1rem .4rem;font-family:var(--f-mono);font-size:.6rem;color:var(--ink-3);min-width:0}
-.bfoot .bcmp{font-weight:600;color:var(--c);letter-spacing:.03em;flex:0 1 auto;min-width:0}
+.bfoot{display:flex;align-items:baseline;gap:.4rem;font-family:var(--f-mono);font-size:.6rem;color:var(--ink-3);min-width:0}
+.bfoot .bcmp{font-weight:600;color:var(--c);letter-spacing:.05em;flex:none}
 .bfoot .btime{color:var(--ink-2);font-weight:500;flex:none}
 .bfoot .bnote{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .bfoot .bnote .is-tag{font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--hot)}
@@ -712,7 +712,7 @@ function renderRibbon() {
         style="left:${L}%;width:${W}%" title="${esc(b.label)} \u00b7 ${esc(rangeLabel(b))}"></div>`);
 
     const text = `${b.short || b.label} ${rangeLabel(b)}`;
-    const halfW = toPct(text.length * 5.6) / 2;      // 0.56rem Spline Sans Mono is ~5.6px per char
+    const halfW = toPct(text.length * 5.15) / 2;     // 0.56rem mono is ~5.15px per char
     let centre = L + W / 2;
     centre = Math.min(Math.max(centre, halfW + 0.2), 100 - halfW - 0.2);
 
@@ -777,7 +777,7 @@ function renderRail() {
     const chips = DATA.competitions.filter(c => c.group === g).map(c => `
       <button class="chip ${c.tier}" data-comp="${c.key}" style="--c:${c.color}"
               aria-pressed="${S.comps.has(c.key)}" title="${esc(c.name)}">
-        <span class="dot"></span>${esc(c.name)}<span class="n">${tally[c.key] || 0}</span>
+        <span class="dot"></span>${esc(c.short)}<span class="n">${tally[c.key] || 0}</span>
       </button>`).join("");
     return `<div class="railgroup"><span class="glabel">${esc(g)}</span>${chips}</div>`;
   }).join("");
@@ -838,7 +838,7 @@ function wfxRow(f) {
       <span class="top">
         <span class="t tnum">${f.tbd ? "TBD" : timeFmt.format(fxDate(f))}</span>
         ${f.disrupted ? `<span class="flag">${esc(f.status)}</span>` : mv ? `<span class="flag">&#8635; moved</span>` : ""}
-        <span class="cmp">${esc(c.name)}</span>
+        <span class="cmp">${esc(c.short)}</span>
       </span>
       <span class="team">${tname(f.home, f.ht)}${score}</span>
       <span class="team">${tname(f.away, f.at)}</span>
@@ -958,7 +958,7 @@ function renderList() {
         const score = f.finished && f.gh != null ? `${f.gh}&#8211;${f.ga}` : "";
         return `<button class="lrow ${mv?"moved":""} ${f.disrupted?"off":""} ${isBig(f)?"big":""}" style="--c:${c.color}" data-fx="${f.id}">
             <span class="when tnum">${esc(when)}${S.group==="comp" && !f.tbd ? " " + timeFmt.format(d) : ""}</span>
-            <span class="cmp">${esc(c.name)}</span>
+            <span class="cmp">${esc(c.short)}</span>
             <span class="match">${tname(f.home, f.ht)}<span class="vs">v</span>${tname(f.away, f.at)}
               ${f.tag ? `<span class="tag">&#160;${esc(f.tag)}</span>` : ""}
               ${score ? `<b class="tnum">&#160;${score}</b>` : ""}
@@ -988,7 +988,7 @@ function renderPanels() {
       ? `<span class="old">${dayFmt.format(from)}, ${timeFmt.format(from)}</span><span class="arw">&#8594;</span>${dayFmt.format(to)}, ${timeFmt.format(to)}`
       : `${esc(c.status_long || c.to_status)}${to ? ` &#183; was ${dayFmt.format(to)}` : ""}`;
     return `<div class="crow" style="--c:${col ? col.color : "var(--rule)"}">
-        <span class="cw">${esc(col ? col.name : c.comp)} &#183; picked up ${esc(c.detected)}</span>
+        <span class="cw">${esc(col ? col.short : c.comp)} &#183; picked up ${esc(c.detected)}</span>
         <span class="cm">${esc(c.home)} v ${esc(c.away)}</span>
         <span class="cd">${line}</span>
       </div>`;
@@ -1044,7 +1044,7 @@ function bigCard(f) {
       </span>
       <span class="bteams">${esc(f.home)}<span class="vs">v</span>${esc(f.away)}${score}</span>
       <span class="bfoot">
-        <span class="bcmp">${esc(c.name)}</span>
+        <span class="bcmp">${esc(c.short)}</span>
         <span class="btime">${f.tbd ? "TBD" : timeFmt.format(d)}</span>
         <span class="bnote">${note}</span>
       </span>
