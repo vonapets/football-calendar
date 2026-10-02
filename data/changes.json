@@ -1,5 +1,16 @@
 [
  {
+  "detected": "2026-10-02",
+  "kind": "moved",
+  "id": 401918759,
+  "comp": "cdr",
+  "home": "Atl\u00e9tico Melilla",
+  "away": "Atl\u00e9tico Pinatarense",
+  "from_utc": "2026-10-04T10:00:00Z",
+  "to_utc": "2026-10-03T18:00:00Z",
+  "round": "Qualifying Round"
+ },
+ {
   "detected": "2026-09-29",
   "kind": "moved",
   "id": 401892164,
