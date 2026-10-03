@@ -1,5 +1,104 @@
 [
  {
+  "detected": "2026-10-03",
+  "kind": "moved",
+  "id": 401882824,
+  "comp": "liga",
+  "home": "Deportivo",
+  "away": "Osasuna",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-11-02T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-03",
+  "kind": "moved",
+  "id": 401882823,
+  "comp": "liga",
+  "home": "Elche",
+  "away": "Valencia",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-11-01T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-03",
+  "kind": "moved",
+  "id": 401882819,
+  "comp": "liga",
+  "home": "Racing Santander",
+  "away": "Real Madrid",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-11-01T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-03",
+  "kind": "moved",
+  "id": 401882821,
+  "comp": "liga",
+  "home": "Getafe",
+  "away": "Sevilla",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-11-01T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-03",
+  "kind": "moved",
+  "id": 401882822,
+  "comp": "liga",
+  "home": "Barcelona",
+  "away": "Alav\u00e9s",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-10-31T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-03",
+  "kind": "moved",
+  "id": 401882825,
+  "comp": "liga",
+  "home": "Real Betis",
+  "away": "M\u00e1laga",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-10-31T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-03",
+  "kind": "moved",
+  "id": 401882818,
+  "comp": "liga",
+  "home": "Rayo Vallecano",
+  "away": "Celta Vigo",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-10-31T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-03",
+  "kind": "moved",
+  "id": 401882820,
+  "comp": "liga",
+  "home": "Levante",
+  "away": "Atl\u00e9tico Madrid",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-10-31T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-03",
+  "kind": "moved",
+  "id": 401882817,
+  "comp": "liga",
+  "home": "Villarreal",
+  "away": "Espanyol",
+  "from_utc": "2026-11-01T20:00:00Z",
+  "to_utc": "2026-10-30T20:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-10-02",
   "kind": "moved",
   "id": 401918759,
