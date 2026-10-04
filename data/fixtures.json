@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T08:42:24Z",
+ "generated_at": "2026-10-04T14:19:34Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -14400,24 +14400,6 @@
    "finished": true
   },
   {
-   "id": 401918759,
-   "comp": "cdr",
-   "utc": "2026-10-03T18:00:00Z",
-   "ts": 1791050400,
-   "status": "PST",
-   "status_long": "Postponed",
-   "round": "Qualifying Round",
-   "home": "Atl\u00e9tico Melilla",
-   "away": "Atl\u00e9tico Pinatarense",
-   "venue": "La Espiguera",
-   "gh": null,
-   "ga": null,
-   "tbd": false,
-   "qual": false,
-   "disrupted": true,
-   "finished": false
-  },
-  {
    "id": 401918758,
    "comp": "cdr",
    "utc": "2026-10-04T11:00:00Z",
@@ -14500,6 +14482,24 @@
    "home": "Sporting de Alc\u00e1zar",
    "away": "CP Talayuela",
    "venue": "Manuel Delgado Meco",
+   "gh": null,
+   "ga": null,
+   "tbd": false,
+   "qual": false,
+   "disrupted": false,
+   "finished": false
+  },
+  {
+   "id": 401918759,
+   "comp": "cdr",
+   "utc": "2026-10-04T16:00:00Z",
+   "ts": 1791129600,
+   "status": "NS",
+   "status_long": "Not started",
+   "round": "Qualifying Round",
+   "home": "Atl\u00e9tico Melilla",
+   "away": "Atl\u00e9tico Pinatarense",
+   "venue": "La Espiguera",
    "gh": null,
    "ga": null,
    "tbd": false,
@@ -42798,6 +42798,17 @@
   }
  ],
  "changes": [
+  {
+   "detected": "2026-10-04",
+   "kind": "moved",
+   "id": 401918759,
+   "comp": "cdr",
+   "home": "Atl\u00e9tico Melilla",
+   "away": "Atl\u00e9tico Pinatarense",
+   "from_utc": "2026-10-03T18:00:00Z",
+   "to_utc": "2026-10-04T16:00:00Z",
+   "round": "Qualifying Round"
+  },
   {
    "detected": "2026-10-04",
    "kind": "status",
