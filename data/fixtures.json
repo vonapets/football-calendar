@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-03T18:11:03Z",
+ "generated_at": "2026-10-04T02:03:42Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -14373,7 +14373,7 @@
    "round": "Qualifying Round",
    "home": "CD Tede\u00f3n",
    "away": "Anaitasuna",
-   "venue": null,
+   "venue": "Estadio San Miguel",
    "gh": 2,
    "ga": 5,
    "tbd": false,
@@ -14404,8 +14404,8 @@
    "comp": "cdr",
    "utc": "2026-10-03T18:00:00Z",
    "ts": 1791050400,
-   "status": "NS",
-   "status_long": "Not started",
+   "status": "PST",
+   "status_long": "Postponed",
    "round": "Qualifying Round",
    "home": "Atl\u00e9tico Melilla",
    "away": "Atl\u00e9tico Pinatarense",
@@ -14414,7 +14414,7 @@
    "ga": null,
    "tbd": false,
    "qual": false,
-   "disrupted": false,
+   "disrupted": true,
    "finished": false
   },
   {
@@ -42798,6 +42798,20 @@
   }
  ],
  "changes": [
+  {
+   "detected": "2026-10-04",
+   "kind": "status",
+   "id": 401918759,
+   "comp": "cdr",
+   "home": "Atl\u00e9tico Melilla",
+   "away": "Atl\u00e9tico Pinatarense",
+   "from_status": "NS",
+   "to_status": "PST",
+   "status_long": "Postponed",
+   "from_utc": "2026-10-03T18:00:00Z",
+   "to_utc": "2026-10-03T18:00:00Z",
+   "round": "Qualifying Round"
+  },
   {
    "detected": "2026-10-03",
    "kind": "moved",

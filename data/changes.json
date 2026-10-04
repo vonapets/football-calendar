@@ -1,5 +1,19 @@
 [
  {
+  "detected": "2026-10-04",
+  "kind": "status",
+  "id": 401918759,
+  "comp": "cdr",
+  "home": "Atl\u00e9tico Melilla",
+  "away": "Atl\u00e9tico Pinatarense",
+  "from_status": "NS",
+  "to_status": "PST",
+  "status_long": "Postponed",
+  "from_utc": "2026-10-03T18:00:00Z",
+  "to_utc": "2026-10-03T18:00:00Z",
+  "round": "Qualifying Round"
+ },
+ {
   "detected": "2026-10-03",
   "kind": "moved",
   "id": 401882824,
