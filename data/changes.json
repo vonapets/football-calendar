@@ -1,5 +1,16 @@
 [
  {
+  "detected": "2026-10-07",
+  "kind": "moved",
+  "id": 401918758,
+  "comp": "cdr",
+  "home": "Atl\u00e9tico Uni\u00f3n G\u00fc\u00edmar",
+  "away": "Sporting Hortaleza",
+  "from_utc": "2026-10-04T11:00:00Z",
+  "to_utc": "2026-10-11T11:00:00Z",
+  "round": "Qualifying Round"
+ },
+ {
   "detected": "2026-10-04",
   "kind": "moved",
   "id": 401918759,

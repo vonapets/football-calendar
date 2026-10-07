@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T19:44:35Z",
+ "generated_at": "2026-10-07T01:53:03Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -14400,24 +14400,6 @@
    "finished": true
   },
   {
-   "id": 401918758,
-   "comp": "cdr",
-   "utc": "2026-10-04T11:00:00Z",
-   "ts": 1791111600,
-   "status": "PST",
-   "status_long": "Postponed",
-   "round": "Qualifying Round",
-   "home": "Atl\u00e9tico Uni\u00f3n G\u00fc\u00edmar",
-   "away": "Sporting Hortaleza",
-   "venue": "Estadio de Tasagaya",
-   "gh": null,
-   "ga": null,
-   "tbd": false,
-   "qual": false,
-   "disrupted": true,
-   "finished": false
-  },
-  {
    "id": 401918752,
    "comp": "cdr",
    "utc": "2026-10-04T14:00:00Z",
@@ -14968,6 +14950,24 @@
    "home": "Como",
    "away": "AS Roma",
    "venue": "Giuseppe Sinigaglia",
+   "gh": null,
+   "ga": null,
+   "tbd": false,
+   "qual": false,
+   "disrupted": false,
+   "finished": false
+  },
+  {
+   "id": 401918758,
+   "comp": "cdr",
+   "utc": "2026-10-11T11:00:00Z",
+   "ts": 1791716400,
+   "status": "NS",
+   "status_long": "Not started",
+   "round": "Qualifying Round",
+   "home": "Atl\u00e9tico Uni\u00f3n G\u00fc\u00edmar",
+   "away": "Sporting Hortaleza",
+   "venue": null,
    "gh": null,
    "ga": null,
    "tbd": false,
@@ -42798,6 +42798,17 @@
   }
  ],
  "changes": [
+  {
+   "detected": "2026-10-07",
+   "kind": "moved",
+   "id": 401918758,
+   "comp": "cdr",
+   "home": "Atl\u00e9tico Uni\u00f3n G\u00fc\u00edmar",
+   "away": "Sporting Hortaleza",
+   "from_utc": "2026-10-04T11:00:00Z",
+   "to_utc": "2026-10-11T11:00:00Z",
+   "round": "Qualifying Round"
+  },
   {
    "detected": "2026-10-04",
    "kind": "moved",
