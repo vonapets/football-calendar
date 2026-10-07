@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T09:06:40Z",
+ "generated_at": "2026-10-07T15:44:39Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -14400,24 +14400,6 @@
    "finished": true
   },
   {
-   "id": 401918752,
-   "comp": "cdr",
-   "utc": "2026-10-04T14:00:00Z",
-   "ts": 1791122400,
-   "status": "PST",
-   "status_long": "Postponed",
-   "round": "Qualifying Round",
-   "home": "AE Prat",
-   "away": "CF San Rafael",
-   "venue": "Municipal Sagnier",
-   "gh": null,
-   "ga": null,
-   "tbd": false,
-   "qual": false,
-   "disrupted": true,
-   "finished": false
-  },
-  {
    "id": 401918510,
    "comp": "cdr",
    "utc": "2026-10-04T14:00:00Z",
@@ -15040,6 +15022,24 @@
    "home": "Hull City",
    "away": "Everton",
    "venue": "The MKM Stadium",
+   "gh": null,
+   "ga": null,
+   "tbd": false,
+   "qual": false,
+   "disrupted": false,
+   "finished": false
+  },
+  {
+   "id": 401918752,
+   "comp": "cdr",
+   "utc": "2026-10-11T14:00:00Z",
+   "ts": 1791727200,
+   "status": "NS",
+   "status_long": "Not started",
+   "round": "Qualifying Round",
+   "home": "AE Prat",
+   "away": "CF San Rafael",
+   "venue": "Municipal Sagnier",
    "gh": null,
    "ga": null,
    "tbd": false,
@@ -42798,6 +42798,17 @@
   }
  ],
  "changes": [
+  {
+   "detected": "2026-10-07",
+   "kind": "moved",
+   "id": 401918752,
+   "comp": "cdr",
+   "home": "AE Prat",
+   "away": "CF San Rafael",
+   "from_utc": "2026-10-04T14:00:00Z",
+   "to_utc": "2026-10-11T14:00:00Z",
+   "round": "Qualifying Round"
+  },
   {
    "detected": "2026-10-07",
    "kind": "moved",
