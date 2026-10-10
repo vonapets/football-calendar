@@ -1,5 +1,19 @@
 [
  {
+  "detected": "2026-10-10",
+  "kind": "status",
+  "id": 401882849,
+  "comp": "liga",
+  "home": "Rayo Vallecano",
+  "away": "Athletic Club",
+  "from_status": "NS",
+  "to_status": "ABD",
+  "status_long": "Abandoned",
+  "from_utc": "2026-10-10T12:00:00Z",
+  "to_utc": "2026-10-10T12:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-10-07",
   "kind": "moved",
   "id": 401918752,
