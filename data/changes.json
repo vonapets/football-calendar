@@ -1,5 +1,104 @@
 [
  {
+  "detected": "2026-10-12",
+  "kind": "moved",
+  "id": 401882815,
+  "comp": "liga",
+  "home": "Celta Vigo",
+  "away": "Levante",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-08T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-12",
+  "kind": "moved",
+  "id": 401882807,
+  "comp": "liga",
+  "home": "Villarreal",
+  "away": "Getafe",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-08T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-12",
+  "kind": "moved",
+  "id": 401882810,
+  "comp": "liga",
+  "home": "Real Sociedad",
+  "away": "Rayo Vallecano",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-08T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-12",
+  "kind": "moved",
+  "id": 401882814,
+  "comp": "liga",
+  "home": "Elche",
+  "away": "Real Betis",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-08T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-12",
+  "kind": "moved",
+  "id": 401882808,
+  "comp": "liga",
+  "home": "Valencia",
+  "away": "Real Madrid",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-07T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-12",
+  "kind": "moved",
+  "id": 401882811,
+  "comp": "liga",
+  "home": "Osasuna",
+  "away": "Athletic Club",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-07T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-12",
+  "kind": "moved",
+  "id": 401882813,
+  "comp": "liga",
+  "home": "Espanyol",
+  "away": "Deportivo",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-07T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-12",
+  "kind": "moved",
+  "id": 401882812,
+  "comp": "liga",
+  "home": "M\u00e1laga",
+  "away": "Racing Santander",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-07T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-12",
+  "kind": "moved",
+  "id": 401882809,
+  "comp": "liga",
+  "home": "Sevilla",
+  "away": "Alav\u00e9s",
+  "from_utc": "2026-11-08T20:00:00Z",
+  "to_utc": "2026-11-06T20:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-10-10",
   "kind": "status",
   "id": 401882849,
