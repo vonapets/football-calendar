@@ -2,6 +2,17 @@
  {
   "detected": "2026-10-12",
   "kind": "moved",
+  "id": 401878308,
+  "comp": "spl",
+  "home": "Aberdeen",
+  "away": "Celtic",
+  "from_utc": "2026-12-19T15:00:00Z",
+  "to_utc": "2026-12-20T12:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-12",
+  "kind": "moved",
   "id": 401882815,
   "comp": "liga",
   "home": "Celta Vigo",

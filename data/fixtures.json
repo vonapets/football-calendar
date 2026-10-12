@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T09:37:57Z",
+ "generated_at": "2026-10-12T18:10:40Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -15196,8 +15196,8 @@
    "comp": "seri",
    "utc": "2026-10-12T16:30:00Z",
    "ts": 1791822600,
-   "status": "NS",
-   "status_long": "Not started",
+   "status": "2H",
+   "status_long": "Second half",
    "round": "",
    "home": "Atalanta",
    "away": "Venezia",
@@ -26676,24 +26676,6 @@
    "finished": false
   },
   {
-   "id": 401878308,
-   "comp": "spl",
-   "utc": "2026-12-19T15:00:00Z",
-   "ts": 1797692400,
-   "status": "NS",
-   "status_long": "Not started",
-   "round": "",
-   "home": "Aberdeen",
-   "away": "Celtic",
-   "venue": "Pittodrie Stadium",
-   "gh": null,
-   "ga": null,
-   "tbd": false,
-   "qual": false,
-   "disrupted": false,
-   "finished": false
-  },
-  {
    "id": 401888216,
    "comp": "slig",
    "utc": "2026-12-19T16:00:00Z",
@@ -26797,6 +26779,24 @@
    "gh": null,
    "ga": null,
    "tbd": true,
+   "qual": false,
+   "disrupted": false,
+   "finished": false
+  },
+  {
+   "id": 401878308,
+   "comp": "spl",
+   "utc": "2026-12-20T12:00:00Z",
+   "ts": 1797768000,
+   "status": "NS",
+   "status_long": "Not started",
+   "round": "",
+   "home": "Aberdeen",
+   "away": "Celtic",
+   "venue": "Pittodrie Stadium",
+   "gh": null,
+   "ga": null,
+   "tbd": false,
    "qual": false,
    "disrupted": false,
    "finished": false
@@ -42798,6 +42798,17 @@
   }
  ],
  "changes": [
+  {
+   "detected": "2026-10-12",
+   "kind": "moved",
+   "id": 401878308,
+   "comp": "spl",
+   "home": "Aberdeen",
+   "away": "Celtic",
+   "from_utc": "2026-12-19T15:00:00Z",
+   "to_utc": "2026-12-20T12:00:00Z",
+   "round": ""
+  },
   {
    "detected": "2026-10-12",
    "kind": "moved",
