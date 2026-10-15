@@ -1,5 +1,16 @@
 [
  {
+  "detected": "2026-10-15",
+  "kind": "moved",
+  "id": 401882846,
+  "comp": "liga",
+  "home": "Real Betis",
+  "away": "Barcelona",
+  "from_utc": "2026-10-17T16:30:00Z",
+  "to_utc": "2026-10-17T16:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-10-12",
   "kind": "moved",
   "id": 401878308,
