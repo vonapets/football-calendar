@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T07:24:27Z",
+ "generated_at": "2026-10-18T12:47:04Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -16564,8 +16564,8 @@
    "comp": "liga",
    "utc": "2026-10-18T12:00:00Z",
    "ts": 1792324800,
-   "status": "NS",
-   "status_long": "Not started",
+   "status": "1H",
+   "status_long": "First half",
    "round": "",
    "home": "Osasuna",
    "away": "Racing Santander",
