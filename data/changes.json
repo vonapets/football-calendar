@@ -77,6 +77,105 @@
   "round": ""
  },
  {
+  "detected": "2026-10-21",
+  "kind": "moved",
+  "id": 401882802,
+  "comp": "liga",
+  "home": "Levante",
+  "away": "Elche",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-23T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-21",
+  "kind": "moved",
+  "id": 401882801,
+  "comp": "liga",
+  "home": "Osasuna",
+  "away": "M\u00e1laga",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-22T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-21",
+  "kind": "moved",
+  "id": 401882800,
+  "comp": "liga",
+  "home": "Racing Santander",
+  "away": "Real Sociedad",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-22T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-21",
+  "kind": "moved",
+  "id": 401882804,
+  "comp": "liga",
+  "home": "Barcelona",
+  "away": "Villarreal",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-22T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-21",
+  "kind": "moved",
+  "id": 401882798,
+  "comp": "liga",
+  "home": "Real Madrid",
+  "away": "Celta Vigo",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-21T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-21",
+  "kind": "moved",
+  "id": 401882797,
+  "comp": "liga",
+  "home": "Sevilla",
+  "away": "Real Betis",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-21T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-21",
+  "kind": "moved",
+  "id": 401882799,
+  "comp": "liga",
+  "home": "Rayo Vallecano",
+  "away": "Valencia",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-21T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-21",
+  "kind": "moved",
+  "id": 401882806,
+  "comp": "liga",
+  "home": "Alav\u00e9s",
+  "away": "Deportivo",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-21T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-10-21",
+  "kind": "moved",
+  "id": 401882805,
+  "comp": "liga",
+  "home": "Athletic Club",
+  "away": "Espanyol",
+  "from_utc": "2026-11-22T20:00:00Z",
+  "to_utc": "2026-11-20T20:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-10-19",
   "kind": "moved",
   "id": 401879202,
