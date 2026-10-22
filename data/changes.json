@@ -1,5 +1,16 @@
 [
  {
+  "detected": "2026-10-22",
+  "kind": "moved",
+  "id": 401876367,
+  "comp": "lig1",
+  "home": "Brest",
+  "away": "Marseille",
+  "from_utc": "2027-01-02T20:00:00Z",
+  "to_utc": "2027-01-02T16:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-10-21",
   "kind": "moved",
   "id": 401876336,
