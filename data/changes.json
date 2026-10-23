@@ -88,6 +88,17 @@
   "round": "First Round"
  },
  {
+  "detected": "2026-10-23",
+  "kind": "moved",
+  "id": 401876422,
+  "comp": "lig1",
+  "home": "Paris Saint-Germain",
+  "away": "Lyon",
+  "from_utc": "2026-10-25T19:45:00Z",
+  "to_utc": "2026-10-26T19:30:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-10-22",
   "kind": "moved",
   "id": 401876367,

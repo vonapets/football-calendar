@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-23T13:46:00Z",
+ "generated_at": "2026-10-23T18:39:08Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -18396,24 +18396,6 @@
    "finished": false
   },
   {
-   "id": 401876422,
-   "comp": "lig1",
-   "utc": "2026-10-25T19:45:00Z",
-   "ts": 1792957500,
-   "status": "NS",
-   "status_long": "Not started",
-   "round": "",
-   "home": "Paris Saint-Germain",
-   "away": "Lyon",
-   "venue": "Parc des Princes",
-   "gh": null,
-   "ga": null,
-   "tbd": false,
-   "qual": false,
-   "disrupted": false,
-   "finished": false
-  },
-  {
    "id": 401874779,
    "comp": "seri",
    "utc": "2026-10-25T19:45:00Z",
@@ -18496,6 +18478,24 @@
    "home": "Santa Clara",
    "away": "Benfica",
    "venue": "Est\u00e1dio de S\u00e3o Miguel",
+   "gh": null,
+   "ga": null,
+   "tbd": false,
+   "qual": false,
+   "disrupted": false,
+   "finished": false
+  },
+  {
+   "id": 401876422,
+   "comp": "lig1",
+   "utc": "2026-10-26T19:30:00Z",
+   "ts": 1793043000,
+   "status": "NS",
+   "status_long": "Not started",
+   "round": "",
+   "home": "Paris Saint-Germain",
+   "away": "Lyon",
+   "venue": "Parc des Princes",
    "gh": null,
    "ga": null,
    "tbd": false,
@@ -19197,7 +19197,7 @@
    "round": "First Round",
    "home": "Covadonga",
    "away": "Real Valladolid",
-   "venue": null,
+   "venue": "Estadio El Bayu",
    "gh": null,
    "ga": null,
    "tbd": false,
@@ -44613,6 +44613,17 @@
    "from_utc": "2026-11-07T15:00:00Z",
    "to_utc": "2026-11-06T19:45:00Z",
    "round": "First Round"
+  },
+  {
+   "detected": "2026-10-23",
+   "kind": "moved",
+   "id": 401876422,
+   "comp": "lig1",
+   "home": "Paris Saint-Germain",
+   "away": "Lyon",
+   "from_utc": "2026-10-25T19:45:00Z",
+   "to_utc": "2026-10-26T19:30:00Z",
+   "round": ""
   },
   {
    "detected": "2026-10-22",
