@@ -1,5 +1,38 @@
 [
  {
+  "detected": "2026-10-27",
+  "kind": "moved",
+  "id": 401931821,
+  "comp": "taca",
+  "home": "FC Porto",
+  "away": "Paredes",
+  "from_utc": "2026-11-21T20:00:00Z",
+  "to_utc": "2026-11-22T15:00:00Z",
+  "round": "4Th Round"
+ },
+ {
+  "detected": "2026-10-27",
+  "kind": "moved",
+  "id": 401931820,
+  "comp": "taca",
+  "home": "Sporting CP",
+  "away": "Uniao da Serra",
+  "from_utc": "2026-11-21T20:00:00Z",
+  "to_utc": "2026-11-22T15:00:00Z",
+  "round": "4Th Round"
+ },
+ {
+  "detected": "2026-10-27",
+  "kind": "moved",
+  "id": 401931822,
+  "comp": "taca",
+  "home": "Torreense",
+  "away": "Benfica",
+  "from_utc": "2026-11-21T20:00:00Z",
+  "to_utc": "2026-11-22T15:00:00Z",
+  "round": "4Th Round"
+ },
+ {
   "detected": "2026-10-26",
   "kind": "moved",
   "id": 401876335,
