@@ -1,5 +1,16 @@
 [
  {
+  "detected": "2026-10-28",
+  "kind": "moved",
+  "id": 401931085,
+  "comp": "fac",
+  "home": "Bristol Rovers",
+  "away": "Cambridge United",
+  "from_utc": "2026-11-07T15:00:00Z",
+  "to_utc": "2026-11-06T19:30:00Z",
+  "round": "First Round"
+ },
+ {
   "detected": "2026-10-27",
   "kind": "moved",
   "id": 401931821,
