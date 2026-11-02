@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T01:54:41Z",
+ "generated_at": "2026-11-02T09:49:45Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -27526,8 +27526,8 @@
    "comp": "spl",
    "utc": "2026-12-13T15:00:00Z",
    "ts": 1797174000,
-   "status": "NS",
-   "status_long": "Not started",
+   "status": "PST",
+   "status_long": "Postponed",
    "round": "",
    "home": "Celtic",
    "away": "Hibernian",
@@ -27536,7 +27536,7 @@
    "ga": null,
    "tbd": false,
    "qual": false,
-   "disrupted": false,
+   "disrupted": true,
    "finished": false
   },
   {
@@ -44706,6 +44706,20 @@
   }
  ],
  "changes": [
+  {
+   "detected": "2026-11-02",
+   "kind": "status",
+   "id": 401878314,
+   "comp": "spl",
+   "home": "Celtic",
+   "away": "Hibernian",
+   "from_status": "NS",
+   "to_status": "PST",
+   "status_long": "Postponed",
+   "from_utc": "2026-12-13T15:00:00Z",
+   "to_utc": "2026-12-13T15:00:00Z",
+   "round": ""
+  },
   {
    "detected": "2026-10-30",
    "kind": "moved",

@@ -1,5 +1,19 @@
 [
  {
+  "detected": "2026-11-02",
+  "kind": "status",
+  "id": 401878314,
+  "comp": "spl",
+  "home": "Celtic",
+  "away": "Hibernian",
+  "from_status": "NS",
+  "to_status": "PST",
+  "status_long": "Postponed",
+  "from_utc": "2026-12-13T15:00:00Z",
+  "to_utc": "2026-12-13T15:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-10-30",
   "kind": "moved",
   "id": 401882849,
