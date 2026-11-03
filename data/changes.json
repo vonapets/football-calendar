@@ -2,6 +2,17 @@
  {
   "detected": "2026-11-03",
   "kind": "moved",
+  "id": 401878314,
+  "comp": "spl",
+  "home": "Celtic",
+  "away": "Hibernian",
+  "from_utc": "2026-12-13T15:00:00Z",
+  "to_utc": "2027-01-13T19:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-03",
+  "kind": "moved",
   "id": 401885368,
   "comp": "prim",
   "home": "Benfica",
