@@ -35,6 +35,17 @@
  {
   "detected": "2026-11-04",
   "kind": "moved",
+  "id": 401932557,
+  "comp": "knvb",
+  "home": "PSV Eindhoven",
+  "away": "Vitesse",
+  "from_utc": "2026-12-15T20:00:00Z",
+  "to_utc": "2026-12-16T20:00:00Z",
+  "round": "Second Round"
+ },
+ {
+  "detected": "2026-11-04",
+  "kind": "moved",
   "id": 401932163,
   "comp": "efl",
   "home": "Crystal Palace",
@@ -42,6 +53,28 @@
   "from_utc": "2026-12-15T20:00:00Z",
   "to_utc": "2026-12-16T19:30:00Z",
   "round": "Quarterfinals"
+ },
+ {
+  "detected": "2026-11-04",
+  "kind": "moved",
+  "id": 401932626,
+  "comp": "knvb",
+  "home": "GVVV",
+  "away": "Feyenoord Rotterdam",
+  "from_utc": "2026-12-15T20:00:00Z",
+  "to_utc": "2026-12-16T17:45:00Z",
+  "round": "Second Round"
+ },
+ {
+  "detected": "2026-11-04",
+  "kind": "moved",
+  "id": 401932558,
+  "comp": "knvb",
+  "home": "Ajax Amsterdam",
+  "away": "FC Den Bosch",
+  "from_utc": "2026-12-15T20:00:00Z",
+  "to_utc": "2026-12-03T20:00:00Z",
+  "round": "Second Round"
  },
  {
   "detected": "2026-11-04",
