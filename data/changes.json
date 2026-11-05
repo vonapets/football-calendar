@@ -287,6 +287,94 @@
  },
  {
   "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928524,
+  "comp": "cdr",
+  "home": "CD Minera",
+  "away": "FC Cartagena",
+  "from_utc": "2026-11-04T19:30:00Z",
+  "to_utc": "2026-11-18T19:30:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928500,
+  "comp": "cdr",
+  "home": "Reus FC Reddis",
+  "away": "Barakaldo",
+  "from_utc": "2026-11-04T19:30:00Z",
+  "to_utc": "2026-11-18T19:30:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928505,
+  "comp": "cdr",
+  "home": "Alcoyano",
+  "away": "Mallorca",
+  "from_utc": "2026-11-05T20:00:00Z",
+  "to_utc": "2026-11-18T19:00:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928532,
+  "comp": "cdr",
+  "home": "Badajoz",
+  "away": "Tenerife",
+  "from_utc": "2026-11-10T19:00:00Z",
+  "to_utc": "2026-11-18T19:00:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928518,
+  "comp": "cdr",
+  "home": "Portugalete",
+  "away": "Real Uni\u00f3n Irun",
+  "from_utc": "2026-11-04T18:00:00Z",
+  "to_utc": "2026-11-18T18:00:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928497,
+  "comp": "cdr",
+  "home": "Utebo",
+  "away": "CD Sabadell",
+  "from_utc": "2026-11-04T19:30:00Z",
+  "to_utc": "2026-11-18T18:00:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928527,
+  "comp": "cdr",
+  "home": "CD Tarancon",
+  "away": "Levante",
+  "from_utc": "2026-11-05T18:00:00Z",
+  "to_utc": "2026-11-12T18:00:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928506,
+  "comp": "cdr",
+  "home": "Calvo Sotelo",
+  "away": "Albacete",
+  "from_utc": "2026-11-04T19:45:00Z",
+  "to_utc": "2026-11-12T17:30:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
   "kind": "status",
   "id": 401928532,
   "comp": "cdr",
@@ -297,6 +385,39 @@
   "status_long": "Postponed",
   "from_utc": "2026-11-10T19:00:00Z",
   "to_utc": "2026-11-10T19:00:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928519,
+  "comp": "cdr",
+  "home": "Amorebieta",
+  "away": "UD Logro\u00f1\u00e9s",
+  "from_utc": "2026-11-04T19:00:00Z",
+  "to_utc": "2026-11-10T19:00:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928514,
+  "comp": "cdr",
+  "home": "Anaitasuna",
+  "away": "Alav\u00e9s",
+  "from_utc": "2026-11-03T18:00:00Z",
+  "to_utc": "2026-11-10T18:00:00Z",
+  "round": "First Round"
+ },
+ {
+  "detected": "2026-11-05",
+  "kind": "moved",
+  "id": 401928516,
+  "comp": "cdr",
+  "home": "CD Pamplona",
+  "away": "Eibar",
+  "from_utc": "2026-11-03T18:00:00Z",
+  "to_utc": "2026-11-10T18:00:00Z",
   "round": "First Round"
  },
  {
