@@ -1,5 +1,137 @@
 [
  {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401915487,
+  "comp": "uel",
+  "home": "NK Celje",
+  "away": "Olympiacos",
+  "from_utc": "2026-12-10T20:00:00Z",
+  "to_utc": "2026-12-10T17:45:00Z",
+  "round": "League Phase"
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882700,
+  "comp": "liga",
+  "home": "Barcelona",
+  "away": "Atl\u00e9tico Madrid",
+  "from_utc": "2027-02-07T20:00:00Z",
+  "to_utc": "2026-12-02T20:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882698,
+  "comp": "liga",
+  "home": "Real Sociedad",
+  "away": "Real Madrid",
+  "from_utc": "2027-02-07T20:00:00Z",
+  "to_utc": "2026-12-02T18:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882792,
+  "comp": "liga",
+  "home": "Espanyol",
+  "away": "Getafe",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-30T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882795,
+  "comp": "liga",
+  "home": "Celta Vigo",
+  "away": "Villarreal",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-29T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882794,
+  "comp": "liga",
+  "home": "Deportivo",
+  "away": "Barcelona",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-29T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882787,
+  "comp": "liga",
+  "home": "Valencia",
+  "away": "Osasuna",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-29T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882789,
+  "comp": "liga",
+  "home": "Real Madrid",
+  "away": "Alav\u00e9s",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-28T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882793,
+  "comp": "liga",
+  "home": "Elche",
+  "away": "Atl\u00e9tico Madrid",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-28T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882790,
+  "comp": "liga",
+  "home": "M\u00e1laga",
+  "away": "Athletic Club",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-28T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882796,
+  "comp": "liga",
+  "home": "Real Betis",
+  "away": "Rayo Vallecano",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-28T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
+  "kind": "moved",
+  "id": 401882791,
+  "comp": "liga",
+  "home": "Levante",
+  "away": "Racing Santander",
+  "from_utc": "2026-11-29T20:00:00Z",
+  "to_utc": "2026-11-27T20:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-11-05",
   "kind": "moved",
   "id": 401884662,
