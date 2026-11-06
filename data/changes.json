@@ -12,6 +12,20 @@
  },
  {
   "detected": "2026-11-06",
+  "kind": "status",
+  "id": 401882849,
+  "comp": "liga",
+  "home": "Rayo Vallecano",
+  "away": "Athletic Club",
+  "from_status": "ABD",
+  "to_status": "SUSP",
+  "status_long": "Suspended",
+  "from_utc": "2026-12-09T19:00:00Z",
+  "to_utc": "2026-12-09T19:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-06",
   "kind": "moved",
   "id": 401882700,
   "comp": "liga",
