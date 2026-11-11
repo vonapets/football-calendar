@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T20:59:46Z",
+ "generated_at": "2026-11-11T02:19:36Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -22738,18 +22738,18 @@
    "comp": "cdr",
    "utc": "2026-11-10T20:00:00Z",
    "ts": 1794340800,
-   "status": "HT",
-   "status_long": "Half time",
+   "status": "FT",
+   "status_long": "Full time",
    "round": "First Round",
    "home": "Tavernes de la Valldigna",
    "away": "Valencia",
    "venue": "Mestalla Stadium",
-   "gh": null,
-   "ga": null,
+   "gh": 0,
+   "ga": 6,
    "tbd": false,
    "qual": false,
    "disrupted": false,
-   "finished": false
+   "finished": true
   },
   {
    "id": 401928506,
