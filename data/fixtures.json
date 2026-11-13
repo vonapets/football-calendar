@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T16:43:22Z",
+ "generated_at": "2026-11-13T21:00:15Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -22810,8 +22810,8 @@
    "comp": "cdr",
    "utc": "2026-11-13T20:00:00Z",
    "ts": 1794600000,
-   "status": "NS",
-   "status_long": "Not started",
+   "status": "HT",
+   "status_long": "Half time",
    "round": "First Round",
    "home": "Salamanca UDS",
    "away": "Celta Vigo",
