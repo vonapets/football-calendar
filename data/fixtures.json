@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T21:57:31Z",
+ "generated_at": "2026-11-21T03:34:46Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -22972,18 +22972,18 @@
    "comp": "taca",
    "utc": "2026-11-20T20:45:00Z",
    "ts": 1795207500,
-   "status": "HT",
-   "status_long": "Half time",
+   "status": "PEN",
+   "status_long": "Won on penalties",
    "round": "4Th Round",
    "home": "FC Porto",
    "away": "Paredes",
    "venue": "Est\u00e1dio do Drag\u00e3o",
-   "gh": null,
-   "ga": null,
+   "gh": 1,
+   "ga": 1,
    "tbd": false,
    "qual": false,
    "disrupted": false,
-   "finished": false
+   "finished": true
   },
   {
    "id": 401879233,
