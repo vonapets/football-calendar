@@ -1,5 +1,104 @@
 [
  {
+  "detected": "2026-11-23",
+  "kind": "moved",
+  "id": 401882772,
+  "comp": "liga",
+  "home": "Espanyol",
+  "away": "Celta Vigo",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-14T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-23",
+  "kind": "moved",
+  "id": 401882768,
+  "comp": "liga",
+  "home": "Real Sociedad",
+  "away": "Getafe",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-13T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-23",
+  "kind": "moved",
+  "id": 401882774,
+  "comp": "liga",
+  "home": "Deportivo",
+  "away": "Athletic Club",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-13T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-23",
+  "kind": "moved",
+  "id": 401882776,
+  "comp": "liga",
+  "home": "Atl\u00e9tico Madrid",
+  "away": "Valencia",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-13T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-23",
+  "kind": "moved",
+  "id": 401882775,
+  "comp": "liga",
+  "home": "Real Betis",
+  "away": "Racing Santander",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-12T20:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-23",
+  "kind": "moved",
+  "id": 401882770,
+  "comp": "liga",
+  "home": "M\u00e1laga",
+  "away": "Barcelona",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-12T17:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-23",
+  "kind": "moved",
+  "id": 401882767,
+  "comp": "liga",
+  "home": "Villarreal",
+  "away": "Rayo Vallecano",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-12T15:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-23",
+  "kind": "moved",
+  "id": 401882771,
+  "comp": "liga",
+  "home": "Levante",
+  "away": "Alav\u00e9s",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-12T13:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-23",
+  "kind": "moved",
+  "id": 401882773,
+  "comp": "liga",
+  "home": "Elche",
+  "away": "Sevilla",
+  "from_utc": "2026-12-13T20:00:00Z",
+  "to_utc": "2026-12-11T20:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-11-19",
   "kind": "moved",
   "id": 401878715,
