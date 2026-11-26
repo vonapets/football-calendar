@@ -2,6 +2,127 @@
  {
   "detected": "2026-11-26",
   "kind": "moved",
+  "id": 401885332,
+  "comp": "prim",
+  "home": "Acad\u00e9mico de Viseu",
+  "away": "Benfica",
+  "from_utc": "2027-01-17T20:00:00Z",
+  "to_utc": "2027-01-17T18:00:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401885339,
+  "comp": "prim",
+  "home": "Sporting CP",
+  "away": "Estrela",
+  "from_utc": "2027-01-17T20:00:00Z",
+  "to_utc": "2027-01-16T20:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401885334,
+  "comp": "prim",
+  "home": "Alverca",
+  "away": "FC Porto",
+  "from_utc": "2027-01-17T20:00:00Z",
+  "to_utc": "2027-01-15T20:15:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401885340,
+  "comp": "prim",
+  "home": "Sporting CP",
+  "away": "Santa Clara",
+  "from_utc": "2027-01-10T20:00:00Z",
+  "to_utc": "2027-01-02T20:30:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401885350,
+  "comp": "prim",
+  "home": "Benfica",
+  "away": "Sporting CP",
+  "from_utc": "2026-12-27T20:00:00Z",
+  "to_utc": "2026-12-29T20:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401885352,
+  "comp": "prim",
+  "home": "FC Porto",
+  "away": "C.D. Nacional",
+  "from_utc": "2026-12-27T20:00:00Z",
+  "to_utc": "2026-12-28T20:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401885358,
+  "comp": "prim",
+  "home": "Sporting CP",
+  "away": "Estoril",
+  "from_utc": "2026-12-20T20:00:00Z",
+  "to_utc": "2026-12-22T20:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401885362,
+  "comp": "prim",
+  "home": "FC Famalicao",
+  "away": "FC Porto",
+  "from_utc": "2026-12-20T20:00:00Z",
+  "to_utc": "2026-12-21T20:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401885360,
+  "comp": "prim",
+  "home": "Rio Ave",
+  "away": "Benfica",
+  "from_utc": "2026-12-20T20:00:00Z",
+  "to_utc": "2026-12-21T18:45:00Z",
+  "round": ""
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401931837,
+  "comp": "taca",
+  "home": "Benfica",
+  "away": "Tondela",
+  "from_utc": "2026-12-16T15:00:00Z",
+  "to_utc": "2026-12-17T20:45:00Z",
+  "round": "5Th Round"
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
+  "id": 401931828,
+  "comp": "taca",
+  "home": "Uniao Leiria",
+  "away": "FC Porto",
+  "from_utc": "2026-12-16T15:00:00Z",
+  "to_utc": "2026-12-17T19:00:00Z",
+  "round": "5Th Round"
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "moved",
   "id": 401931839,
   "comp": "taca",
   "home": "Sporting CP",
@@ -9,6 +130,20 @@
   "from_utc": "2026-12-16T15:00:00Z",
   "to_utc": "2026-12-16T20:45:00Z",
   "round": "5Th Round"
+ },
+ {
+  "detected": "2026-11-26",
+  "kind": "status",
+  "id": 401915506,
+  "comp": "uel",
+  "home": "Besiktas",
+  "away": "Hapoel Be'er",
+  "from_status": "NS",
+  "to_status": "SUSP",
+  "status_long": "Suspended",
+  "from_utc": "2026-11-26T17:45:00Z",
+  "to_utc": "2026-11-26T17:45:00Z",
+  "round": "League Phase"
  },
  {
   "detected": "2026-11-24",
