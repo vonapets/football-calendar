@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T04:30:42Z",
+ "generated_at": "2026-11-26T11:20:36Z",
  "source": "ESPN",
  "season": 2026,
  "season_label": "2026/27",
@@ -28908,24 +28908,6 @@
    "finished": false
   },
   {
-   "id": 401931839,
-   "comp": "taca",
-   "utc": "2026-12-16T15:00:00Z",
-   "ts": 1797433200,
-   "status": "NS",
-   "status_long": "Not started",
-   "round": "5Th Round",
-   "home": "Sporting CP",
-   "away": "Atl\u00e9tico CP",
-   "venue": "Est\u00e1dio Jos\u00e9 Alvalade",
-   "gh": null,
-   "ga": null,
-   "tbd": false,
-   "qual": false,
-   "disrupted": false,
-   "finished": false
-  },
-  {
    "id": 401931828,
    "comp": "taca",
    "utc": "2026-12-16T15:00:00Z",
@@ -29026,6 +29008,24 @@
    "home": "PSV Eindhoven",
    "away": "Vitesse",
    "venue": "Philips Stadion",
+   "gh": null,
+   "ga": null,
+   "tbd": false,
+   "qual": false,
+   "disrupted": false,
+   "finished": false
+  },
+  {
+   "id": 401931839,
+   "comp": "taca",
+   "utc": "2026-12-16T20:45:00Z",
+   "ts": 1797453900,
+   "status": "NS",
+   "status_long": "Not started",
+   "round": "5Th Round",
+   "home": "Sporting CP",
+   "away": "Atl\u00e9tico CP",
+   "venue": "Est\u00e1dio Jos\u00e9 Alvalade",
    "gh": null,
    "ga": null,
    "tbd": false,
@@ -45678,6 +45678,17 @@
   }
  ],
  "changes": [
+  {
+   "detected": "2026-11-26",
+   "kind": "moved",
+   "id": 401931839,
+   "comp": "taca",
+   "home": "Sporting CP",
+   "away": "Atl\u00e9tico CP",
+   "from_utc": "2026-12-16T15:00:00Z",
+   "to_utc": "2026-12-16T20:45:00Z",
+   "round": "5Th Round"
+  },
   {
    "detected": "2026-11-24",
    "kind": "moved",
