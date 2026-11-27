@@ -1,5 +1,16 @@
 [
  {
+  "detected": "2026-11-27",
+  "kind": "moved",
+  "id": 401878263,
+  "comp": "spl",
+  "home": "Motherwell",
+  "away": "Celtic",
+  "from_utc": "2027-02-03T19:45:00Z",
+  "to_utc": "2027-02-03T20:00:00Z",
+  "round": ""
+ },
+ {
   "detected": "2026-11-26",
   "kind": "moved",
   "id": 401885332,
